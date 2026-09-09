@@ -412,12 +412,17 @@ if (dropzones.btnRunExtract) {
 
       if (res.status === 401) return adminLogout();
 
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({}));
+        throw new Error(errData.error || `HTTP ${res.status}`);
+      }
+
       const report = await res.json();
       ADMIN_STATE.importReport = report;
       renderImportValidationReport(report);
     } catch (err) {
       console.error('Import failed:', err);
-      alert('ፋይሎችን ማውጣት አልተቻለም።');
+      alert('ፋይሎችን ማውጣት አልተቻለም፦ ' + (err.message || 'ያልታወቀ ስህተት'));
     } finally {
       dropzones.btnRunExtract.disabled = false;
       dropzones.btnRunExtract.textContent = '⚡ ጥያቄዎችንና መልሶችን ፈትሽ (Run Extraction & Validation)';
@@ -429,7 +434,7 @@ function renderImportValidationReport(report) {
   const container = dropzones.reportContainer;
   if (!container) return;
 
-  const isPass = report.validation_passed;
+  const isPass = Boolean(report.validation_passed);
 
   const checksHtml = (report.checks || []).map(c => `
     <div class="check-item">
@@ -437,18 +442,21 @@ function renderImportValidationReport(report) {
         ${c.passed ? '✓' : '✕'}
       </div>
       <div class="check-info">
-        <div class="check-name">${escapeHtml(c.title)}</div>
-        <div class="check-desc">${escapeHtml(c.detail)}</div>
+        <div class="check-name">${escapeHtml(c.title || '')}</div>
+        <div class="check-desc">${escapeHtml(c.detail || '')}</div>
       </div>
     </div>
   `).join('');
+
+  const pdfSha = (report.metadata && report.metadata.question_file_sha256) ? report.metadata.question_file_sha256.substring(0, 12) + '...' : '';
+  const docxSha = (report.metadata && report.metadata.answer_file_sha256) ? report.metadata.answer_file_sha256.substring(0, 12) + '...' : '';
 
   container.innerHTML = `
     <div class="validation-report-card">
       <div class="report-header">
         <div>
           <h3 style="font-size: 1.25rem; font-family: var(--font-am);">የማረጋገጫ ሪፖርት (Validation Report)</h3>
-          <div style="font-size: 0.85rem; color: var(--text-secondary);">${escapeHtml(report.summary)}</div>
+          <div style="font-size: 0.85rem; color: var(--text-secondary);">${escapeHtml(report.summary || '')}</div>
         </div>
         <span class="report-badge ${isPass ? 'pass' : 'fail'}">
           ${isPass ? 'PASS: 80/80 ጥያቄዎች ተረጋግጠዋል' : 'FAIL: ስህተቶች ተገኝተዋል'}
@@ -461,8 +469,8 @@ function renderImportValidationReport(report) {
 
       <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
         <div style="font-size: 0.8rem; color: var(--text-muted);">
-          PDF Hash: <code>${report.metadata.question_file_sha256 ? report.metadata.question_file_sha256.substring(0, 12) + '...' : ''}</code> | 
-          DOCX Hash: <code>${report.metadata.answer_file_sha256 ? report.metadata.answer_file_sha256.substring(0, 12) + '...' : ''}</code>
+          PDF Hash: <code>${pdfSha}</code> | 
+          DOCX Hash: <code>${docxSha}</code>
         </div>
         <button type="button" class="btn-primary" id="btn-publish-imported-version" style="width: auto; padding: 0.65rem 1.5rem;" ${isPass ? '' : 'disabled'}>
           🚀 እንደ አዲስ ስሪት አጽድቅ (Publish & Lock Version)

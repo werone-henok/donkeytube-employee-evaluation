@@ -214,10 +214,32 @@ router.post('/import', upload.fields([{ name: 'pdf_file', maxCount: 1 }, { name:
 
     const allPassed = validationErrors.length === 0;
 
+    const checks = validationAudit.map(a => ({
+      title: a.rule,
+      detail: a.details,
+      passed: a.passed
+    }));
+
+    const metadata = {
+      question_file_name: pdfName,
+      question_file_sha256: pdfHash,
+      answer_file_name: docxName,
+      answer_file_sha256: docxHash,
+      imported_at: new Date().toISOString(),
+      imported_by: 'Administrator'
+    };
+
     res.json({
       success: true,
       validation_passed: allPassed,
       ready_for_publishing: allPassed,
+      summary: allPassed
+        ? 'ሁሉም 10 የማረጋገጫ መስፈርቶች በተሳካ ሁኔታ አልፈዋል (All 10 validation checks passed)'
+        : 'በማረጋገጫው ወቅት አንዳንድ ስህተቶች ተገኝተዋል (Validation issues detected)',
+      checks,
+      metadata,
+      questions_preview: seedData.questions,
+      answers_preview: seedData.answers,
       source_hashes: {
         question_pdf: { name: pdfName, sha256: pdfHash },
         answer_docx: { name: docxName, sha256: docxHash }
