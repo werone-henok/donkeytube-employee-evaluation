@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>የተፈታኞች መስኮት | ዶንኪ ቲዩብ የአመራር ብቃት መመዘኛ</title>
+  <meta name="description" content="ዶንኪ ቲዩብ የማኔጅመንትና አመራር ብቃት መመዘኛ ፈተና - የተፈታኞች ፖርታል (80 ጥያቄዎች)">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f59e0b'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
+</head>
+<body>
+
+  <!-- Employee Portal Top Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-section">
+        <div class="brand-logo">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 14.54L4.82 13.5 3 14.5 12 20l9-5.5-1.82-1L12 17.54z"/>
+          </svg>
+        </div>
+        <div class="brand-titles">
+          <span class="brand-name">DONKEY TUBE</span>
+          <span class="brand-subtitle">የተፈታኞች መስኮት — የአመራር ብቃት መመዘኛ</span>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <div id="employee-profile-pill" style="display: none; background: rgba(255, 255, 255, 0.06); border: 1px solid var(--border-subtle); border-radius: var(--radius-full); padding: 0.35rem 1rem; font-size: 0.85rem; color: var(--text-secondary);">
+          👤 <strong id="employee-profile-name" style="color: #fff;">-</strong> (<span id="employee-profile-dept">-</span>)
+        </div>
+
+        <div class="header-status-badge">
+          <span class="status-dot-pulse"></span>
+          <span>ቀጥታ ፈተና (150 ደቂቃ)</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main View Container -->
+  <main class="app-main">
+
+    <!-- VIEW 1: Candidate Welcome & Registration -->
+    <section id="view-candidate" class="view-section active-view">
+      <div class="welcome-hero">
+        <span class="welcome-badge">
+          ⭐ ከ2 ዓመት በላይ ላገለገሉ ሰራተኞች የተዘጋጀ ይፋዊ መመዘኛ
+        </span>
+        <h1 class="hero-title">
+          የማኔጅመንትና አመራር ብቃት መመዘኛ ፈተና
+        </h1>
+        <p class="hero-description">
+          ይህ ፈተና ሰራተኞችን ወደ ማኔጅመንትና አመራርነት ለማሳደግ የተዘጋጀ ይፋዊ መመዘኛ ነው። ጥያቄዎቹን በጥንቃቄ በማንበብ ትክክለኛውን ምላሽ ይስጡ።
+        </p>
+
+        <!-- Stats Overview -->
+        <div class="stats-grid-preview">
+          <div class="stat-preview-card">
+            <span class="stat-num">80</span>
+            <span class="stat-label">ጠቅላላ ጥያቄዎች</span>
+          </div>
+          <div class="stat-preview-card">
+            <span class="stat-num">100</span>
+            <span class="stat-label">ጠቅላላ ነጥብ</span>
+          </div>
+          <div class="stat-preview-card">
+            <span class="stat-num">150</span>
+            <span class="stat-label">የተሰጠ ሰዓት (ደቂቃ)</span>
+          </div>
+          <div class="stat-preview-card">
+            <span class="stat-num">70%</span>
+            <span class="stat-label">የማለፊያ መቶኛ</span>
+          </div>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="registration-card">
+          <form id="registration-form">
+            <div class="form-group">
+              <label class="form-label" for="candidate-name-input">የተፈታኝ ሙሉ ስም (Full Name) *</label>
+              <input type="text" id="candidate-name-input" class="form-input" placeholder="ምሳሌ፡ አበበ ከበደ (Abebe Kebede)" required autofocus>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="candidate-dept-input">የስራ ክፍል (Department) *</label>
+              <input type="text" id="candidate-dept-input" class="form-input" value="የሶሻል ሚዲያ ቢዝነስ (Social Media Business)" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="candidate-id-input">የሰራተኛ መለያ ቁጥር (Employee ID - Optional)</label>
+              <input type="text" id="candidate-id-input" class="form-input" placeholder="ምሳሌ፡ DT-1042">
+            </div>
+
+            <div style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.5rem; font-size: 0.85rem; color: var(--text-secondary); text-align: left;">
+              <strong style="color: var(--text-gold);">የፈተናው አወቃቀርና መመሪያ፦</strong>
+              <ul style="margin-left: 1.25rem; margin-top: 0.4rem; line-height: 1.6;">
+                <li>ክፍል 1፡ እውነት ወይም ሐሰት (20 ጥያቄዎች - 20 ነጥብ)</li>
+                <li>ክፍል 2፡ ባዶ ቦታ ሙላ (20 ጥያቄዎች - 20 ነጥብ)</li>
+                <li>ክፍል 3፡ ባለብዙ አማራጭ (20 ጥያቄዎች - 40 ነጥብ)</li>
+                <li>ክፍል 4፡ አብራራ / አጭር መልስ (20 ጥያቄዎች - 20 ነጥብ)</li>
+                <li>የተሰጠው ሰዓት 2 ሰዓት ከ30 ደቂቃ (150 ደቂቃ) ሲሆን ሰዓቱ ሲያልቅ ፈተናው በራሱ ተቆልፎ ይሰላል።</li>
+              </ul>
+            </div>
+
+            <button type="submit" class="btn-primary">
+              🚀 ፈተናውን ጀምር (Start Evaluation)
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 2: Live Examination Interface -->
+    <section id="view-exam" class="view-section">
+      <!-- Sticky Floating HUD -->
+      <div class="exam-hud-bar">
+        <div class="timer-box">
+          <span class="timer-icon">⏱️</span>
+          <span id="exam-timer-display" class="timer-value">02:30:00</span>
+        </div>
+
+        <div class="exam-progress-wrap">
+          <div class="progress-labels">
+            <span>የፈተና ሂደት (Progress)</span>
+            <span id="exam-progress-label">0 / 80 ጥያቄዎች ተመልሰዋል (0%)</span>
+          </div>
+          <div class="progress-track">
+            <div id="exam-progress-fill" class="progress-fill"></div>
+          </div>
+        </div>
+
+        <div class="hud-actions">
+          <button type="button" id="btn-submit-exam" class="btn-submit-exam">
+            ✓ ፈተናውን ጨርስ (Submit)
+          </button>
+        </div>
+      </div>
+
+      <!-- Section Navigator Tabs -->
+      <div class="section-nav-tabs">
+        <button type="button" class="sec-tab-btn active" data-section="1">
+          <span>ክፍል 1፡ እውነት ወይም ሐሰት</span>
+          <span class="sec-count-badge">ጥያቄ 1 - 20 (20 ነጥብ)</span>
+        </button>
+        <button type="button" class="sec-tab-btn" data-section="2">
+          <span>ክፍል 2፡ ባዶ ቦታ ሙላ</span>
+          <span class="sec-count-badge">ጥያቄ 21 - 40 (20 ነጥብ)</span>
+        </button>
+        <button type="button" class="sec-tab-btn" data-section="3">
+          <span>ክፍል 3፡ ባለብዙ አማራጭ</span>
+          <span class="sec-count-badge">ጥያቄ 41 - 60 (40 ነጥብ)</span>
+        </button>
+        <button type="button" class="sec-tab-btn" data-section="4">
+          <span>ክፍል 4፡ አብራራ / አጭር መልስ</span>
+          <span class="sec-count-badge">ጥያቄ 61 - 80 (20 ነጥብ)</span>
+        </button>
+      </div>
+
+      <!-- Exam Layout: Questions List + 80-Question Navigator Sidebar -->
+      <div class="exam-layout">
+        <!-- Main Questions Container -->
+        <div class="questions-container" id="questions-list-container">
+          <!-- Populated dynamically -->
+        </div>
+
+        <!-- Right: 80 Question Palette -->
+        <aside class="palette-sidebar">
+          <div class="palette-title">
+            <span>የጥያቄዎች ሰሌዳ (Question Matrix)</span>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">80 ጥያቄዎች</span>
+          </div>
+
+          <div class="palette-legend">
+            <div class="legend-item">
+              <span class="legend-color legend-answered"></span>
+              <span>የተመለሰ</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-color legend-unanswered"></span>
+              <span>ያልተመለሰ</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-color legend-flagged"></span>
+              <span>ዕልባት (Flagged)</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-color legend-current"></span>
+              <span>አሁን ያለበት</span>
+            </div>
+          </div>
+
+          <div class="palette-grid" id="palette-tiles-grid">
+            <!-- 80 Question Tiles (1 to 80) -->
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- VIEW 3: Results Certificate -->
+    <section id="view-results" class="view-section">
+      <div id="results-content-box">
+        <!-- Populated on Exam Submit -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Submit Confirmation Modal -->
+  <div id="submit-confirm-modal" class="modal-overlay">
+    <div class="modal-card">
+      <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem; font-family: var(--font-am);">
+        ፈተናውን ለማጠናቀቅ እርግጠኛ ነዎት?
+      </h3>
+      <p style="color: var(--text-secondary); margin-bottom: 1.25rem;">
+        አንዴ "አስገባና ቆልፍ" ካሉ በኋላ ምንም አይነት መልስ መቀየር አይቻልም። ፈተናዎ ወዲያውኑ ተቆልፎ ይሰላል።
+      </p>
+
+      <div id="unanswered-warning-box" style="background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.5rem; display: none;">
+        <strong style="color: #f87171;">⚠️ ማስጠንቀቂያ፦</strong>
+        <p style="color: #fca5a5; font-size: 0.9rem; margin-top: 0.25rem;">
+          ገና ያልተመለሱ <strong id="unanswered-count-span">0</strong> ጥያቄዎች አሉ።
+        </p>
+      </div>
+
+      <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+        <button type="button" id="btn-cancel-submit-modal" class="nav-tab-btn" style="background: rgba(255,255,255,0.06); padding: 0.75rem 1.25rem;">
+          ተመለስ (Review Answers)
+        </button>
+        <button type="button" id="btn-confirm-submit-modal" class="btn-submit-exam" style="padding: 0.75rem 1.5rem;">
+          🔒 አስገባና ቆልፍ (Confirm & Lock)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

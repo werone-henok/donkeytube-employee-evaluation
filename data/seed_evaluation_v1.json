@@ -1,0 +1,2460 @@
+{
+  "version": "v1.0.0-official",
+  "title": "የማኔጅመንትና አመራር ብቃት መመዘኛ ፈተና (80 ጥያቄዎች)",
+  "description": "ይህ ፈተና ከ2 ዓመት በላይ ያገለገሉ ሰራተኞችን ወደ ማኔጅመንትና አመራርነት ለማሳደግ የተዘጋጀ መመዘኛ ነው።",
+  "department": "የሶሻል ሚዲያ ቢዝነስ (Social Media Business)",
+  "time_limit_minutes": 150,
+  "total_questions": 80,
+  "total_points": 100,
+  "passing_percentage": 70,
+  "is_locked": true,
+  "is_published": true,
+  "source_metadata": {
+    "question_file_name": "Management_Promotion_Exam_80_Questions.pdf",
+    "question_file_sha256": "2787a3a4c1fdd50933d47910b5470421a36d7295d1a585b169e97c6a32c24094",
+    "answer_file_name": "Answers.docx",
+    "answer_file_sha256": "f59c1a02a629c4ed924f2a35db632d3917f6acdc3fe18a12e8d2fb696b0d618c",
+    "imported_at": "2026-09-08T14:56:34.702682",
+    "imported_by": "Administrator"
+  },
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "ክፍል 1፡ እውነት ወይም ሐሰት (True / False)",
+      "question_count": 20,
+      "points_per_question": 1,
+      "total_points": 20
+    },
+    {
+      "section_number": 2,
+      "title": "ክፍል 2፡ ባዶ ቦታ ሙላ (Fill in the Blanks)",
+      "question_count": 20,
+      "points_per_question": 1,
+      "total_points": 20
+    },
+    {
+      "section_number": 3,
+      "title": "ክፍል 3፡ ባለብዙ አማራጭ (Multiple Choice)",
+      "question_count": 20,
+      "points_per_question": 2,
+      "total_points": 40
+    },
+    {
+      "section_number": 4,
+      "title": "ክፍል 4፡ አብራራ / አጭር መልስ (Essay / Short Answer)",
+      "question_count": 20,
+      "points_per_question": 1,
+      "total_points": 20
+    }
+  ],
+  "questions": [
+    {
+      "question_number": 1,
+      "section_number": 1,
+      "section_title": "ክፍል 1፡ እውነት ወይም ሐሰት (True / False)",
+      "question_type": "TRUE_FALSE",
+      "question_text": "ከአስፈጻሚ (Operational) ሰራተኛነት ወደ ማኔጀርነት ሲሸጋገሩ፣ ዋና ስራው በራስ እጅ ስራዎችን መስራት ሳይሆን በቡድን አባላት አማካኝነት ግቦችን ማሳካት ነው።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 2,
+      "section_number": 1,
+      "section_title": "ክፍል 1፡ እውነት ወይም ሐሰት (True / False)",
+      "question_type": "TRUE_FALSE",
+      "question_text": "ውጤታማ ማኔጀር ሁሉንም ስራዎች ለብቻው የሚሰራ እና ስልጣንና ኃላፊነትን ለሌሎች የማያጋራ (Delegation የማይያደርግ) ነው።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 3,
+      "section_number": 1,
+      "section_title": "ክፍል 1፡ እውነት ወይም ሐሰት (True / False)",
+      "question_type": "TRUE_FALSE",
+      "question_text": "በሶሻል ሚዲያ ቢዝነስ ውስጥ ለደንበኛ የሚሰጥ የዲጂታል ካምፔን ጥራት ከፍጥነት በላይ ሁልጊዜ ቅድሚያ ይሰጠዋል፤ መዘገየት ምንም ችግር የለውም።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 4,
+      "section_number": 1,
+      "section_title": "ክፍል 1፡ እውነት ወይም ሐሰት (True / False)",
+      "question_type": "TRUE_FALSE",
+      "question_text": "Constructive Feedback (የግንባታ አስተያየት) መስጠት የሰራተኛውን ስህተት ብቻ ማጉላት ሳይሆን ጥንካሬውን እና የሚሻሻልበትን መንገድ ማሳየት ነው።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 5,
+      "section_number": 1,
+      "section_title": "ክፍል 1፡ እውነት ወይም ሐሰት (True / False)",
+      "question_type": "TRUE_FALSE",
+      "question_text": "በሶሻል ሚዲያ ገጽ ላይ የሚጻፍ መጥፎ አስተያየት (Negative Comment) ወዲያውኑ መደመሰስ (Delete መደረግ) አለበት።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 6,
+      "section_number": 1,
+      "section_title": "ክፍል 1፡ እውነት ወይም ሐሰት (True / False)",
+      "question_type": "TRUE_FALSE",
+      "question_text": "Eisenhower Matrix ስራዎችን በአስቸኳይነታቸው (Urgency) እና በአስፈላጊነታቸው (Importance) ለመለየት የሚያገለግል መሳሪያ ነው።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 7,
+      "section_number": 1,
+      "section_title": "ክፍል 1፡ እውነት ወይም ሐሰት (True / False)",
+      "question_type": "TRUE_FALSE",
+      "question_text": "በቡድን ውስጥ የሚፈጠር አለመግባባት/ግጭት ሁልጊዜ ጎጂ በመሆኑ ማኔጀር ወዲያውኑ ማቆም አለበት።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 8,
+      "section_number": 1,
+      "section_title": "ክፍል 1፡ እውነት ወይም ሐሰት (True / False)",
+      "question_type": "TRUE_FALSE",
+      "question_text": "KPIs (Key Performance Indicators) የሰራተኞችን የስራ አፈፃፀም በቁጥር ለማቅረብና ለመለካት የሚያገለግሉ መስፈርቶች ናቸው።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 9,
+      "section_number": 1,
+      "section_title": "ክፍል 1፡ እውነት ወይም ሐሰት (True / False)",
+      "question_type": "TRUE_FALSE",
+      "question_text": "ማኔጀር የቡድን አባላቱን በስራ ማበረታታትና ማመስገን ያለበት በትልልቅ ስኬቶች ጊዜ ብቻ ነው።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 10,
+      "section_number": 1,
+      "section_title": "ክፍል 1፡ እውነት ወይም ሐሰት (True / False)",
+      "question_type": "TRUE_FALSE",
+      "question_text": "በሶሻል ሚዲያ ማርኬቲንግ ውስጥ Engagement Rate የሚለካው ይዘቱ የታየበትን (Views) ቁጥር ብቻ ነው።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 11,
+      "section_number": 1,
+      "section_title": "ክፍል 1፡ እውነት ወይም ሐሰት (True / False)",
+      "question_type": "TRUE_FALSE",
+      "question_text": "ግልጽ የጊዜ ገደብ (Deadline) ማስቀመጥ የቡድን ስራዎች በሰዓታቸው እንዲጠናቀቁ ይረዳል።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 12,
+      "section_number": 1,
+      "section_title": "ክፍል 1፡ እውነት ወይም ሐሰት (True / False)",
+      "question_type": "TRUE_FALSE",
+      "question_text": "ማኔጀር የቡድን አባላቱን በሚገመግምበት ጊዜ የግል ስሜቱን እና ቅርበቱን መሰረት ማድረግ አለበት።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 13,
+      "section_number": 1,
+      "section_title": "ክፍል 1፡ እውነት ወይም ሐሰት (True / False)",
+      "question_type": "TRUE_FALSE",
+      "question_text": "በስራ ቦታ የሚፈጠሩ ድገተኛ ችግሮችን (Crises) ለመፍታት አስቀድሞ የተዘጋጀ የCrisis Communication Plan መኖር አስፈላጊ ነው።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 14,
+      "section_number": 1,
+      "section_title": "ክፍል 1፡ እውነት ወይም ሐሰት (True / False)",
+      "question_type": "TRUE_FALSE",
+      "question_text": "የሶሻል ሚዲያ ካምፔን ከመጀመሩ በፊት Target Audience (ኢላማ ደንበኛን) ለይቶ ማወቅ አስፈላጊ አይደለም።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 15,
+      "section_number": 1,
+      "section_title": "ክፍል 1፡ እውነት ወይም ሐሰት (True / False)",
+      "question_type": "TRUE_FALSE",
+      "question_text": "ውጤታማ ማኔጀር ጥሩ ተናጋሪ ብቻ ሳይሆን ጥሩ አዳማጭም (Active Listener) መሆን አለበት።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 16,
+      "section_number": 1,
+      "section_title": "ክፍል 1፡ እውነት ወይም ሐሰት (True / False)",
+      "question_type": "TRUE_FALSE",
+      "question_text": "የሰው ሀይል ማደራጀት እና ተግባራትን ማጋራት የማኔጅመንት የመጀመሪያው ተግባር (Planning) ነው።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 17,
+      "section_number": 1,
+      "section_title": "ክፍል 1፡ እውነት ወይም ሐሰት (True / False)",
+      "question_type": "TRUE_FALSE",
+      "question_text": "በቡድን ውስጥ ያሉ ሰራተኞች የስራ ተነሳሽነት ሲቀንስ ከሰራተኛው ጋር ለብቻ ተቀብሎ መወያየት መፍትሄ ያመጣል።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 18,
+      "section_number": 1,
+      "section_title": "ክፍል 1፡ እውነት ወይም ሐሰት (True / False)",
+      "question_type": "TRUE_FALSE",
+      "question_text": "የይዘት የቀን መቁጠሪያ (Content Calendar) ማዘጋጀት የሶሻል ሚዲያ ስራዎችን በስርዓት ለመምራት ይረዳል።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 19,
+      "section_number": 1,
+      "section_title": "ክፍል 1፡ እውነት ወይም ሐሰት (True / False)",
+      "question_type": "TRUE_FALSE",
+      "question_text": "ማኔጀር ለስራው ውድቀት ቡድኑን ተጠያቂ ማድረግ፤ ለስኬቱ ደግሞ እራሱን ብቻ ማቅረብ አለበት።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 20,
+      "section_number": 1,
+      "section_title": "ክፍል 1፡ እውነት ወይም ሐሰት (True / False)",
+      "question_type": "TRUE_FALSE",
+      "question_text": "የሰራተኞችን እርካታ እና ምርታማነት በአንድ ጊዜ ለማሳደግ ክፍት የውይይት ባህል መፍጠር ወሳኝ ነው።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 21,
+      "section_number": 2,
+      "section_title": "ክፍል 2፡ ባዶ ቦታ ሙላ (Fill in the Blanks)",
+      "question_type": "FILL_IN_BLANK",
+      "question_text": "የማኔጅመንት አራት ዋና ዋና ተግባራት ማቀድ (Planning)፣ ማደራጀት (Organizing)፣  (Leading) እና መቆጣጠር (Controlling) ናቸው።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 22,
+      "section_number": 2,
+      "section_title": "ክፍል 2፡ ባዶ ቦታ ሙላ (Fill in the Blanks)",
+      "question_type": "FILL_IN_BLANK",
+      "question_text": "የቡድን አባላትን ስራ በማቀድ ጊዜ SMART ግቦች መዘጋጀት አለባቸው፤ SMART የሚለው ምህጻረ ቃል Specific, Measurable, Achievable, Relevant እና  የሚሉትን ይወክላል።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 23,
+      "section_number": 2,
+      "section_title": "ክፍል 2፡ ባዶ ቦታ ሙላ (Fill in the Blanks)",
+      "question_type": "FILL_IN_BLANK",
+      "question_text": "አንድ ማኔጀር ስልጣንና ኃላፊነትን ለሰራተኛ አሳልፎ የመስጠት ሂደት  (Delegation) ይባላል።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 24,
+      "section_number": 2,
+      "section_title": "ክፍል 2፡ ባዶ ቦታ ሙላ (Fill in the Blanks)",
+      "question_type": "FILL_IN_BLANK",
+      "question_text": "በሶሻል ሚዲያ ቢዝነስ ውስጥ የደንበኞችን ጥያቄና ቅሬታ በፈጣን ሁኔታ ምላሽ መስጠት  (Customer Service) ይባላል።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 25,
+      "section_number": 2,
+      "section_title": "ክፍል 2፡ ባዶ ቦታ ሙላ (Fill in the Blanks)",
+      "question_type": "FILL_IN_BLANK",
+      "question_text": "አንድ የሶሻል ሚዲያ ይዘት (Post) በአጭር ጊዜ ውስጥ በበርካታ ሰዎች ዘንድ በጣም ተሰራጭቶ ሲታይ  ሆነ ይባላል።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 26,
+      "section_number": 2,
+      "section_title": "ክፍል 2፡ ባዶ ቦታ ሙላ (Fill in the Blanks)",
+      "question_type": "FILL_IN_BLANK",
+      "question_text": "የሰራተኞችን የስራ አፈፃፀም ለማወቅ በየጊዜው የሚደረግ ምዘና  (Performance Appraisal) ይባላል።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 27,
+      "section_number": 2,
+      "section_title": "ክፍል 2፡ ባዶ ቦታ ሙላ (Fill in the Blanks)",
+      "question_type": "FILL_IN_BLANK",
+      "question_text": "ስራዎችን በጊዜ ገደብ አለመስራትና ወደፊት ማስተላለፍ/ማዘገየት  (Procrastination) ይባላል።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 28,
+      "section_number": 2,
+      "section_title": "ክፍል 2፡ ባዶ ቦታ ሙላ (Fill in the Blanks)",
+      "question_type": "FILL_IN_BLANK",
+      "question_text": "በድርጅት ውስጥ ባሉ ሰራተኞች መካከል የሚደረግ መደበኛ ያልሆነ ግንኙነት እና የመረጃ ልውውጥ Communication ይባላል።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 29,
+      "section_number": 2,
+      "section_title": "ክፍል 2፡ ባዶ ቦታ ሙላ (Fill in the Blanks)",
+      "question_type": "FILL_IN_BLANK",
+      "question_text": "በሶሻል ሚዲያ ማርኬቲንግ ውስጥ ማስታወቂያ የተመለከተ ሰው ወደ ገዢነት ወይም ደንበኝነት የመቀየር መቶኛ  Rate ይባላል።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 30,
+      "section_number": 2,
+      "section_title": "ክፍል 2፡ ባዶ ቦታ ሙላ (Fill in the Blanks)",
+      "question_type": "FILL_IN_BLANK",
+      "question_text": "የቡድን አባላት አዳዲስ ሀሳቦችን ያለ ፍርሃት የሚያመጡበት የውይይት አይነት  (Brainstorming) ይባላል።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 31,
+      "section_number": 2,
+      "section_title": "ክፍል 2፡ ባዶ ቦታ ሙላ (Fill in the Blanks)",
+      "question_type": "FILL_IN_BLANK",
+      "question_text": "ማኔጀር የቡድን አባላትን በተግባራቸው የሚያበረታታበት ዘዴ  (Motivation) ይባላል።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 32,
+      "section_number": 2,
+      "section_title": "ክፍል 2፡ ባዶ ቦታ ሙላ (Fill in the Blanks)",
+      "question_type": "FILL_IN_BLANK",
+      "question_text": "ለደንበኞች የሚዘጋጁ ይዘቶች እና ካምፔኖች በጊዜ ሰሌዳ ተደርድረው የሚቀመጡበት ሰነድ  Calendar ይባላል።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 33,
+      "section_number": 2,
+      "section_title": "ክፍል 2፡ ባዶ ቦታ ሙላ (Fill in the Blanks)",
+      "question_type": "FILL_IN_BLANK",
+      "question_text": "በስራ ቦታ የሚፈጠሩ አለመግባባቶችን በሰላማዊና በውይይት መንገድ መፍታት  Resolution ይባላል።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 34,
+      "section_number": 2,
+      "section_title": "ክፍል 2፡ ባዶ ቦታ ሙላ (Fill in the Blanks)",
+      "question_type": "FILL_IN_BLANK",
+      "question_text": "የድርጅቱን የረጅም ጊዜ አቅጣጫ እና ግብ የማስቀመጥ ሂደት  Planning ይባላል።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 35,
+      "section_number": 2,
+      "section_title": "ክፍል 2፡ ባዶ ቦታ ሙላ (Fill in the Blanks)",
+      "question_type": "FILL_IN_BLANK",
+      "question_text": "የሶሻል ሚዲያ ገጾች ያሉበትን የዕድገት ደረጃ እና የስታቲስቲክስ መረጃ መተንተን  (Analytics) ይባላል።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 36,
+      "section_number": 2,
+      "section_title": "ክፍል 2፡ ባዶ ቦታ ሙላ (Fill in the Blanks)",
+      "question_type": "FILL_IN_BLANK",
+      "question_text": "አንድ ማኔጀር ከቡድኑ ጋር የሚያደርገው የአንድ ለአንድ ውይይት  Meeting ይባላል።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 37,
+      "section_number": 2,
+      "section_title": "ክፍል 2፡ ባዶ ቦታ ሙላ (Fill in the Blanks)",
+      "question_type": "FILL_IN_BLANK",
+      "question_text": "በስራ አሰራር ላይ የሚፈጠሩ ድገተኛ አደጋዎችን ወይም ችግሮችን የማስተዳደር ስልት  Management ይባላል።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 38,
+      "section_number": 2,
+      "section_title": "ክፍል 2፡ ባዶ ቦታ ሙላ (Fill in the Blanks)",
+      "question_type": "FILL_IN_BLANK",
+      "question_text": "የቡድን አባላት በጋራ እና በቅንጅት ለመስራት ያላቸው ጥንካሬ  Spirit/Cohesion ይባላል።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 39,
+      "section_number": 2,
+      "section_title": "ክፍል 2፡ ባዶ ቦታ ሙላ (Fill in the Blanks)",
+      "question_type": "FILL_IN_BLANK",
+      "question_text": "በየቀኑ የሚሰሩ መደበኛ የስራ እንቅስቀሴዎች  Operations ይባላሉ።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 40,
+      "section_number": 2,
+      "section_title": "ክፍል 2፡ ባዶ ቦታ ሙላ (Fill in the Blanks)",
+      "question_type": "FILL_IN_BLANK",
+      "question_text": "የድርጅቱን እና የቡድኑን እሴቶች (Values) በማክበር ሰራተኞችን በአርአያነት መም ራት  by Example ይባላል።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 41,
+      "section_number": 3,
+      "section_title": "ክፍል 3፡ ባለብዙ አማራጭ (Multiple Choice)",
+      "question_type": "MULTIPLE_CHOICE",
+      "question_text": "ከአስፈጻሚ ሰራተኛነት ወደ ማኔጀርነት ሲሸጋገሩ የአንድ ማኔጀር ዋና ሚና ምንድን ነው?",
+      "points": 2,
+      "choices": [
+        {
+          "key": "ሀ",
+          "text": "ሁሉንም ስራዎች በራሱ መወጣት"
+        },
+        {
+          "key": "ለ",
+          "text": "ቡድኑን በመም ራት፣ በማስተባበርና በመደገፍ ግቦችን ማሳካት"
+        },
+        {
+          "key": "ሐ",
+          "text": "ለሰራተኞች ትእዛዝ መስጠት ብቻ"
+        },
+        {
+          "key": "መ",
+          "text": "የሌሎችን ስራ መከታተልና ማቅበት ብቻ"
+        }
+      ]
+    },
+    {
+      "question_number": 42,
+      "section_number": 3,
+      "section_title": "ክፍል 3፡ ባለብዙ አማራጭ (Multiple Choice)",
+      "question_type": "MULTIPLE_CHOICE",
+      "question_text": "በአንድ የስራ ቀን ውስጥ በርካታ አስቸኳይና አስፈላጊ ስራዎች ቢደራረቡብዎት፣ ስራዎችን ለማስቀደም (Prioritization) የትኛውን ዘዴ መጠቀም አ ግባብ ነው?",
+      "points": 2,
+      "choices": [
+        {
+          "key": "ሀ",
+          "text": "ቀድሞ የመጣውን ስራ ቅድሚያ መስራት"
+        },
+        {
+          "key": "ለ",
+          "text": "ቀላሉን ስራ ብቻ አስቀድሞ መስራት"
+        },
+        {
+          "key": "ሐ",
+          "text": "ስራዎችን በጥደፊያቸው እና በስራው ክብደት/አስፈላጊነት ለይቶ ማቀድ"
+        },
+        {
+          "key": "መ",
+          "text": "ሁሉንም ስራዎች በአንድ ጊዜ ለመስራት መሞከር"
+        }
+      ]
+    },
+    {
+      "question_number": 43,
+      "section_number": 3,
+      "section_title": "ክፍል 3፡ ባለብዙ አማራጭ (Multiple Choice)",
+      "question_type": "MULTIPLE_CHOICE",
+      "question_text": "አንድን ትልቅ ስራ ለቡድን አባል በማጋራት (Delegation) ወቅት ማኔጀር ማድረግ ያለበት ዋና ነገር ምንድን ነው?",
+      "points": 2,
+      "choices": [
+        {
+          "key": "ሀ",
+          "text": "ስራውን ሰጥቶ ሙሉ በሙሉ መተው"
+        },
+        {
+          "key": "ለ",
+          "text": "ኃላፊነቱንና ስልጣኑን ሰጥቶ ግልጽ ግብና መስፈርት ማስቀመጥ"
+        },
+        {
+          "key": "ሐ",
+          "text": "በየአምስት ደቂቃው ሰራተኛውን መጠየቅና ማወክ"
+        },
+        {
+          "key": "መ",
+          "text": "ስራው ከተበላሸ በኋላ ሰራተኛውን መቅጣት"
+        }
+      ]
+    },
+    {
+      "question_number": 44,
+      "section_number": 3,
+      "section_title": "ክፍል 3፡ ባለብዙ አማራጭ (Multiple Choice)",
+      "question_type": "MULTIPLE_CHOICE",
+      "question_text": "በቡድንዎ ውስጥ ባሉ ሁለት ሰራተኞች መካከል በስራ አሰራር ምክንያት አለመግባባት ቢፈጠር፣ እንደ ማኔጀር መጀመሪያ መውሰድ ያለብዎት እርምጃ ምንድን ነው?",
+      "points": 2,
+      "choices": [
+        {
+          "key": "ሀ",
+          "text": "አንደኛውን ሰራተኛ ወዲያውኑ ከቡድኑ ማባረር"
+        },
+        {
+          "key": "ለ",
+          "text": "ሁለቱንም ወገኖች ለይተው በማዳመጥ ችግሩን በጋራ መፍታት"
+        },
+        {
+          "key": "ሐ",
+          "text": "ነገሩን ችላ ብሎ በራሱ ጊዜ እንዲፈታ መተው"
+        },
+        {
+          "key": "መ",
+          "text": "ለሁለቱም ሰራተኞች ማስጠንቀቂያ መስጠት"
+        }
+      ]
+    },
+    {
+      "question_number": 45,
+      "section_number": 3,
+      "section_title": "ክፍል 3፡ ባለብዙ አማራጭ (Multiple Choice)",
+      "question_type": "MULTIPLE_CHOICE",
+      "question_text": "አንድ ቀደም ሲል ጥሩ ይሰራ የነበረ ሰራተኛ በድንገት የስራ ተነሳሽነቱና ውጤቱ ቢቀንስ፣ ተ適ሚው የአመራር እርምጃ የትኛው ነው?",
+      "points": 2,
+      "choices": [
+        {
+          "key": "ሀ",
+          "text": "ወዲያውኑ ደመወዙን መቀነስ"
+        },
+        {
+          "key": "ለ",
+          "text": "ከሰራተኛው ጋር ለብቻ ተቀብለው ውይይት በማድረግ ምክንያቱን መረዳት"
+        },
+        {
+          "key": "ሐ",
+          "text": "በቡድን ስብሰባ ላይ ስሙን ጠርቶ መገሰጽ"
+        },
+        {
+          "key": "መ",
+          "text": "ስራውን ለሌላ ሰራተኛ ማስተላለፍ"
+        }
+      ]
+    },
+    {
+      "question_number": 46,
+      "section_number": 3,
+      "section_title": "ክፍል 3፡ ባለብዙ አማራጭ (Multiple Choice)",
+      "question_type": "MULTIPLE_CHOICE",
+      "question_text": "ለሰራተኛ ግንባታ የሚያግዝ እና መሻሻል የሚያመጣ አስተያየት (Constructive Feedback) የመስጫ ትክክለኛ መንገድ የትኛው ነው?",
+      "points": 2,
+      "choices": [
+        {
+          "key": "ሀ",
+          "text": "በሌሎች ሰራተኞች ፊት ስህተቱን በጩኸት መናገር"
+        },
+        {
+          "key": "ለ",
+          "text": "በግል በመገናኘት ጥንካሬውን አ ግንኖ ድክመቱን በግልጽ ማሳየት"
+        },
+        {
+          "key": "ሐ",
+          "text": "ምንም አይነት መጥፎ ነገር አለመናገር"
+        },
+        {
+          "key": "መ",
+          "text": "አስተያየቱን በጽሁፍ በኢ ሜይል ብቻ መላክ"
+        }
+      ]
+    },
+    {
+      "question_number": 47,
+      "section_number": 3,
+      "section_title": "ክፍል 3፡ ባለብዙ አማራጭ (Multiple Choice)",
+      "question_type": "MULTIPLE_CHOICE",
+      "question_text": "በድርጅታችን የሶሻል ሚዲያ ገጽ ላይ አንድ ደንበኛ በጣም የሚጎዳና የተቆጣ አስተያየት (Negative Comment) ቢጽፍ፣ የመጀመሪያው እርምጃ ምን መሆን አለበት?",
+      "points": 2,
+      "choices": [
+        {
+          "key": "ሀ",
+          "text": "አስተያየቱን ወዲያውኑ ማ delete ማድረግ"
+        },
+        {
+          "key": "ለ",
+          "text": "ደንበኛውን መሳደብና መመለስ"
+        },
+        {
+          "key": "ሐ",
+          "text": "በትህትና ምላሽ መስጠትና ችግሩን በግል መልእክት (DM) ለመፍታት መሞከር"
+        },
+        {
+          "key": "መ",
+          "text": "ገጹን ለአንድ ቀን ዘግቶ ማደር"
+        }
+      ]
+    },
+    {
+      "question_number": 48,
+      "section_number": 3,
+      "section_title": "ክፍል 3፡ ባለብዙ አማራጭ (Multiple Choice)",
+      "question_type": "MULTIPLE_CHOICE",
+      "question_text": "በሶሻል ሚዲያ ስራዎች ውስጥ የስራ ፍጥነትና የይዘት ጥራት (Quality vs Speed) ሲጋጩ ማኔጀር እንዴት ማመዛዘን አለበት?",
+      "points": 2,
+      "choices": [
+        {
+          "key": "ሀ",
+          "text": "ፍጥነትን ብቻ በመም ረጥ ጥራቱን መተው"
+        },
+        {
+          "key": "ለ",
+          "text": "ጥራቱን ብቻ በማሰብ የጊዜ ገደብን መጣስ"
+        },
+        {
+          "key": "ሐ",
+          "text": "የጥራት ደረጃዎችን (Standard Templates) በማዘጋጀት ስራን ማፋጠን"
+        },
+        {
+          "key": "መ",
+          "text": "ሁለቱንም ስራዎች ማቆም"
+        }
+      ]
+    },
+    {
+      "question_number": 49,
+      "section_number": 3,
+      "section_title": "ክፍል 3፡ ባለብዙ አማራጭ (Multiple Choice)",
+      "question_type": "MULTIPLE_CHOICE",
+      "question_text": "አንድ ለደንበኛ የሚረከብ የሶሻል ሚዲያ ካምፔን በቴክኒክ ችግር ምክንያት ሊዘገይ መሆኑን ካወቁ፣ ሁኔታውን እንዴት ያስተዳድሩታል?",
+      "points": 2,
+      "choices": [
+        {
+          "key": "ሀ",
+          "text": "ደንበኛው እስኪጠይቅ ድረስ ዝም ማለት"
+        },
+        {
+          "key": "ለ",
+          "text": "መዘገየቱን ቀድሞ በማሳወቅ ምክንያቱን እና አዲሱን የጊዜ ገደብ ማብራራት"
+        },
+        {
+          "key": "ሐ",
+          "text": "በሌሎች ሰራተኞች ላይ ጥፋቱን መላከክ"
+        },
+        {
+          "key": "መ",
+          "text": "ስራው ሳይጠናቀቅ እንደተጠናቀቀ አድርጎ መላክ"
+        }
+      ]
+    },
+    {
+      "question_number": 50,
+      "section_number": 3,
+      "section_title": "ክፍል 3፡ ባለብዙ አማራጭ (Multiple Choice)",
+      "question_type": "MULTIPLE_CHOICE",
+      "question_text": "እንደ አዲስ ማኔጀር የቡድንዎን ምርታማነትና የሰራተኞችን እርካታ በአንድ ጊዜ ለማሳደግ የትኛው አቀራረብ የተሻለ ነው?",
+      "points": 2,
+      "choices": [
+        {
+          "key": "ሀ",
+          "text": "ጥብቅ ቁጥጥር ማድረግና ፍርሃት መፍጠር"
+        },
+        {
+          "key": "ለ",
+          "text": "ግልጽ ግቦችን ማስቀመጥ፣ ክፍት ውይይት ማድረግና ጥሩ ስራን ማወደስ"
+        },
+        {
+          "key": "ሐ",
+          "text": "ሰራተኞች የሚፈልጉትን ብቻ እንዲሰሩ መተው"
+        },
+        {
+          "key": "መ",
+          "text": "ከሰራተኞች ጋር ምንም አይነት ስብሰባ አለማድረግ"
+        }
+      ]
+    },
+    {
+      "question_number": 51,
+      "section_number": 3,
+      "section_title": "ክፍል 3፡ ባለብዙ አማራጭ (Multiple Choice)",
+      "question_type": "MULTIPLE_CHOICE",
+      "question_text": "የቡድን አባላትን የስራ ብቃት ለማሳደግ (Capacity Building) ማኔጀር ማድረግ ያለበት፡",
+      "points": 2,
+      "choices": [
+        {
+          "key": "ሀ",
+          "text": "ስልጠናዎችንና የማብቂያ እድሎችን ማመቻቸት"
+        },
+        {
+          "key": "ለ",
+          "text": "ስህተት የሰሩ ሰራተኞችን ወዲያውኑ መቀየር"
+        },
+        {
+          "key": "ሐ",
+          "text": "አዳዲስ ሶፍትዌሮችን አለማስተዋወቅ"
+        },
+        {
+          "key": "መ",
+          "text": "ስራዎችን ለብቻው ተቆጣጥሮ መስራት"
+        }
+      ]
+    },
+    {
+      "question_number": 52,
+      "section_number": 3,
+      "section_title": "ክፍል 3፡ ባለብዙ አማራጭ (Multiple Choice)",
+      "question_type": "MULTIPLE_CHOICE",
+      "question_text": "በሶሻል ሚዲያ ማርኬቲንግ ውስጥ Target Audience ማለት ምን ማለት ነው?",
+      "points": 2,
+      "choices": [
+        {
+          "key": "ሀ",
+          "text": "በሶሻል ሚዲያ ላይ ያሉ ሁሉም ሰዎች"
+        },
+        {
+          "key": "ለ",
+          "text": "የድርጅቱን ምርት ወይም አ ገልግሎት ይ ገዛሉ ተብለው የተለዩ የተወሰኑ የህብረተሰብ ክፍሎች"
+        },
+        {
+          "key": "ሐ",
+          "text": "የድርጅቱ ሰራተኞች ብቻ"
+        },
+        {
+          "key": "መ",
+          "text": "የድርጅቱ ተፎካካሪዎች"
+        }
+      ]
+    },
+    {
+      "question_number": 53,
+      "section_number": 3,
+      "section_title": "ክፍል 3፡ ባለብዙ አማራጭ (Multiple Choice)",
+      "question_type": "MULTIPLE_CHOICE",
+      "question_text": "አንድ ማኔጀር በቡድኑ ውስጥ ውሳኔ በሚሰጥበት ጊዜ ሊከተለው የሚገባው የተሻለ አቀራረብ፡",
+      "points": 2,
+      "choices": [
+        {
+          "key": "ሀ",
+          "text": "ሁልጊዜ የራሱን ፍላጎት ብቻ መጫን"
+        },
+        {
+          "key": "ለ",
+          "text": "መረጃዎችን እና የቡድኑን አስተያየት አጣጥሞ መወሰን"
+        },
+        {
+          "key": "ሐ",
+          "text": "ውሳኔ ከመስጠት መሸሽ"
+        },
+        {
+          "key": "መ",
+          "text": "ውሳኔውን ለሰራተኞች ብቻ መተው"
+        }
+      ]
+    },
+    {
+      "question_number": 54,
+      "section_number": 3,
+      "section_title": "ክፍል 3፡ ባለብዙ አማራጭ (Multiple Choice)",
+      "question_type": "MULTIPLE_CHOICE",
+      "question_text": "የቡድን አባላት ስራቸውን በሰዓቱ እንዲያጠናቅቁ ለማድረግ ማኔጀር፡",
+      "points": 2,
+      "choices": [
+        {
+          "key": "ሀ",
+          "text": "የጠነከረ ክትትልና ድጋፍ የሚያስችል የጊዜ ሰሌዳ (Timeline) ማዘጋጀት አለበት"
+        },
+        {
+          "key": "ለ",
+          "text": "በየሰዓቱ ሰራተኞችን ማስፈራራት አለበት"
+        },
+        {
+          "key": "ሐ",
+          "text": "የጊዜ ገደብ መተው አለበት"
+        },
+        {
+          "key": "መ",
+          "text": "ስራው ሲዘገይ ብቻ መናገር አለበት"
+        }
+      ]
+    },
+    {
+      "question_number": 55,
+      "section_number": 3,
+      "section_title": "ክፍል 3፡ ባለብዙ አማራጭ (Multiple Choice)",
+      "question_type": "MULTIPLE_CHOICE",
+      "question_text": "በሶሻል ሚዲያ ማኔጅመንት ውስጥ \"Content Strategy\" ምንድን ነው?",
+      "points": 2,
+      "choices": [
+        {
+          "key": "ሀ",
+          "text": "በየቀኑ ምስሎችን ብቻ መፖሰት"
+        },
+        {
+          "key": "ለ",
+          "text": "የትኛውን ይዘት፣ ለማን፣ መቼ እና ለምን እንደምናቀርብ የሚያሳይ የተቀናጀ እቅድ"
+        },
+        {
+          "key": "ሐ",
+          "text": "የፎቶዎች ስብስብ"
+        },
+        {
+          "key": "መ",
+          "text": "የደንበኞች ስልክ ቁጥር መዝገብ"
+        }
+      ]
+    },
+    {
+      "question_number": 56,
+      "section_number": 3,
+      "section_title": "ክፍል 3፡ ባለብዙ አማራጭ (Multiple Choice)",
+      "question_type": "MULTIPLE_CHOICE",
+      "question_text": "የቡድን አባላት አዲስ ሀሳብ ይዘው ሲመጡ የማኔጀር ምላሽ ምን መሆን አለበት?",
+      "points": 2,
+      "choices": [
+        {
+          "key": "ሀ",
+          "text": "ሀሳቡን ሳይሰሙ ውድቅ ማድረግ"
+        },
+        {
+          "key": "ለ",
+          "text": "ሀሳቡን አዳምጦ አመርቂ ከሆነ ተግባራዊ እንዲሆን ማበረታታት"
+        },
+        {
+          "key": "ሐ",
+          "text": "ሀሳቡን የራሱ አድርጎ ማቅረብ"
+        },
+        {
+          "key": "መ",
+          "text": "ለምን አዲስ ሀሳብ አመጣችሁ ብሎ መቆጣት"
+        }
+      ]
+    },
+    {
+      "question_number": 57,
+      "section_number": 3,
+      "section_title": "ክፍል 3፡ ባለብዙ አማራጭ (Multiple Choice)",
+      "question_type": "MULTIPLE_CHOICE",
+      "question_text": "የሰራተኞችን Burnout (የስራ ድካም/ሰልችቶት) ለመከላከል ማኔጀር ምን ማድረግ ይ ችላል?",
+      "points": 2,
+      "choices": [
+        {
+          "key": "ሀ",
+          "text": "የስራ ጫናን በትክክል ማከፋፈልና እረፍትን ማበረታታት"
+        },
+        {
+          "key": "ለ",
+          "text": "ተጨማሪ ትርፍ ሰዓት ስራ ማስገደድ"
+        },
+        {
+          "key": "ሐ",
+          "text": "የሰራተኞችን ቅሬታ አለመስማት"
+        },
+        {
+          "key": "መ",
+          "text": "እረፍት የሌለው የስራ ሰሌዳ ማውጣት"
+        }
+      ]
+    },
+    {
+      "question_number": 58,
+      "section_number": 3,
+      "section_title": "ክፍል 3፡ ባለብዙ አማራጭ (Multiple Choice)",
+      "question_type": "MULTIPLE_CHOICE",
+      "question_text": "በሶሻል ሚዲያ ቢዝነስ ውስጥ የ \"ROI\" (Return on Investment) ትርጉም ምንድን ነው?",
+      "points": 2,
+      "choices": [
+        {
+          "key": "ሀ",
+          "text": "በሶሻል ሚዲያ ለወጣው ወጪ እና ኢንቨስትመንት የተገኘው የትርፍ/ውጤት መጠን"
+        },
+        {
+          "key": "ለ",
+          "text": "የላይክ ብዛት ብቻ"
+        },
+        {
+          "key": "ሐ",
+          "text": "የሰራተኞች ደመወዝ"
+        },
+        {
+          "key": "መ",
+          "text": "የፎቶዎች ጥራት"
+        }
+      ]
+    },
+    {
+      "question_number": 59,
+      "section_number": 3,
+      "section_title": "ክፍል 3፡ ባለብዙ አማራጭ (Multiple Choice)",
+      "question_type": "MULTIPLE_CHOICE",
+      "question_text": "ውጤታማ የቡድን ስብሰባ (Effective Meeting) ለማካሄድ የመጀመሪያው እርምጃ፡",
+      "points": 2,
+      "choices": [
+        {
+          "key": "ሀ",
+          "text": "ያለ አጀንዳ ስብሰባ መጥራት"
+        },
+        {
+          "key": "ለ",
+          "text": "ስብሰባው ከመጀመሩ በፊት ግልጽ አጀንዳና አላማ ማዘጋጀት"
+        },
+        {
+          "key": "ሐ",
+          "text": "ስብሰባውን ከ3 ሰዓት በላይ ማራዘም"
+        },
+        {
+          "key": "መ",
+          "text": "ተካፋዮች ሳይዘጋጁ እንዲመጡ ማድረግ"
+        }
+      ]
+    },
+    {
+      "question_number": 60,
+      "section_number": 3,
+      "section_title": "ክፍል 3፡ ባለብዙ አማራጭ (Multiple Choice)",
+      "question_type": "MULTIPLE_CHOICE",
+      "question_text": "አንድ ማኔጀር በስራ ቦታ የራስን ስሜት የመግዛትና የሌሎችን ስሜት የመረዳት ችሎታው ___________ ይባላል።",
+      "points": 2,
+      "choices": [
+        {
+          "key": "ሀ",
+          "text": "Emotional Intelligence (ስሜታዊ ብልህነት)"
+        },
+        {
+          "key": "ለ",
+          "text": "Financial Intelligence"
+        },
+        {
+          "key": "ሐ",
+          "text": "Technical Skill"
+        },
+        {
+          "key": "መ",
+          "text": "Time Management"
+        }
+      ]
+    },
+    {
+      "question_number": 61,
+      "section_number": 4,
+      "section_title": "ክፍል 4፡ አብራራ / አጭር መልስ (Essay / Short Answer)",
+      "question_type": "SHORT_ANSWER",
+      "question_text": "ከአስፈጻሚ (Operational) ሰራተኛነት ወደ ማኔጀርነት የመሸጋገር ዋና ዋና ፈተናዎች ምንድን ናቸው? ቢያንስ 2 ነጥቦችን አብራራ/ሪ።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 62,
+      "section_number": 4,
+      "section_title": "ክፍል 4፡ አብራራ / አጭር መልስ (Essay / Short Answer)",
+      "question_type": "SHORT_ANSWER",
+      "question_text": "የሶሻል ሚዲያ ቢዝነስ ከሌሎች ባህላዊ ቢዝነሶች በምን ይለያል? የማኔጀር ሚናስ በዚሁ መነፅር እንዴት ይታያል?",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 63,
+      "section_number": 4,
+      "section_title": "ክፍል 4፡ አብራራ / አጭር መልስ (Essay / Short Answer)",
+      "question_type": "SHORT_ANSWER",
+      "question_text": "SMART Goals ምንድን ናቸው? እያንዳንዱን ፊደል አብራራ/ሪ።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 64,
+      "section_number": 4,
+      "section_title": "ክፍል 4፡ አብራራ / አጭር መልስ (Essay / Short Answer)",
+      "question_type": "SHORT_ANSWER",
+      "question_text": "Delegation (ስራን ማጋራት) ለምን ያስፈልጋል? ለማኔጀሩ እና ለቡድኑ የሚሰጠውን ጥቅም ግለጽ/ጪ።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 65,
+      "section_number": 4,
+      "section_title": "ክፍል 4፡ አብራራ / አጭር መልስ (Essay / Short Answer)",
+      "question_type": "SHORT_ANSWER",
+      "question_text": "በስራ ቦታ የሚፈጠርን ግጭት ለመፍታት የምትጠቀምባቸውን 3 ዋና ዋና ደረጃዎች ዘርዝር/ሪ።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 66,
+      "section_number": 4,
+      "section_title": "ክፍል 4፡ አብራራ / አጭር መልስ (Essay / Short Answer)",
+      "question_type": "SHORT_ANSWER",
+      "question_text": "Constructive Feedback (የግንባታ አስተያየት) ለመስጠት የሚያስችል የ \"Sandwich Technique\" አቀራረብን አብራራ/ሪ።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 67,
+      "section_number": 4,
+      "section_title": "ክፍል 4፡ አብራራ / አጭር መልስ (Essay / Short Answer)",
+      "question_type": "SHORT_ANSWER",
+      "question_text": "በሶሻል ሚዲያ ቢዝነስ ውስጥ የ Crisis Management (የድንገተኛ አደጋ አስተዳደር) አስፈላጊነት ምንድን ነው?",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 68,
+      "section_number": 4,
+      "section_title": "ክፍል 4፡ አብራራ / አጭር መልስ (Essay / Short Answer)",
+      "question_type": "SHORT_ANSWER",
+      "question_text": "የቡድን አባላትን ተነሳሽነት (Motivation) ለማሳደግ የማኔጀር ሚና ምንድን ነው?",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 69,
+      "section_number": 4,
+      "section_title": "ክፍል 4፡ አብራራ / አጭር መልስ (Essay / Short Answer)",
+      "question_type": "SHORT_ANSWER",
+      "question_text": "የይዘት ጥራት (Quality) እና የጊዜ ገደብ (Deadline) ሲጋጩ እንዴት ማመዛዘን ይቻላል?",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 70,
+      "section_number": 4,
+      "section_title": "ክፍል 4፡ አብራራ / አጭር መልስ (Essay / Short Answer)",
+      "question_type": "SHORT_ANSWER",
+      "question_text": "Active Listening (በጥሞና ማዳመጥ) ለአንድ ማኔጀር ለምን አስፈላጊ እንደሆነ አብራራ/ሪ።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 71,
+      "section_number": 4,
+      "section_title": "ክፍል 4፡ አብራራ / አጭር መልስ (Essay / Short Answer)",
+      "question_type": "SHORT_ANSWER",
+      "question_text": "Key Performance Indicators (KPIs) የቡድን አባላትን አፈጻጸም ለመገምገም እንዴት ያገለግላሉ?",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 72,
+      "section_number": 4,
+      "section_title": "ክፍል 4፡ አብራራ / አጭር መልስ (Essay / Short Answer)",
+      "question_type": "SHORT_ANSWER",
+      "question_text": "በሶሻል ሚዲያ ማርኬቲንግ ውስጥ Engagement Rate ከ Follower Count በምን ይበልጣል?",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 73,
+      "section_number": 4,
+      "section_title": "ክፍል 4፡ አብራራ / አጭር መልስ (Essay / Short Answer)",
+      "question_type": "SHORT_ANSWER",
+      "question_text": "የቡድን ስራ (Teamwork) እንዲጎለብት የማኔጀር ሚና ምንድን ነው?",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 74,
+      "section_number": 4,
+      "section_title": "ክፍል 4፡ አብራራ / አጭር መልስ (Essay / Short Answer)",
+      "question_type": "SHORT_ANSWER",
+      "question_text": "አንድ ሰራተኛ በተደጋጋሚ ስራ የሚያረፍድ ቢሆን እንዴት ታስተካክለዋለህ/ሽ?",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 75,
+      "section_number": 4,
+      "section_title": "ክፍል 4፡ አብራራ / አጭር መልስ (Essay / Short Answer)",
+      "question_type": "SHORT_ANSWER",
+      "question_text": "Time Management (የጊዜ አጠቃቀም) ለማኔጀር ስኬት ያለው አስተዋጽኦ ምንድን ነው?",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 76,
+      "section_number": 4,
+      "section_title": "ክፍል 4፡ አብራራ / አጭር መልስ (Essay / Short Answer)",
+      "question_type": "SHORT_ANSWER",
+      "question_text": "በሶሻል ሚዲያ ቢዝነስ ውስጥ የደንበኞች አስተያየት (Customer Feedback) እንዴት ጥቅም ላይ ይውላል?",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 77,
+      "section_number": 4,
+      "section_title": "ክፍል 4፡ አብራራ / አጭር መልስ (Essay / Short Answer)",
+      "question_type": "SHORT_ANSWER",
+      "question_text": "የአመራር ዘይቤዎች (Leadership Styles) መካከል የ Democratic እና Autocratic ልዩነት ምንድን ነው?",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 78,
+      "section_number": 4,
+      "section_title": "ክፍል 4፡ አብራራ / አጭር መልስ (Essay / Short Answer)",
+      "question_type": "SHORT_ANSWER",
+      "question_text": "ሰራተኞች የስራ ድካም (Burnout) እንዳይ ገጥማቸው ማኔጀር ምን መውሰድ አለበት?",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 79,
+      "section_number": 4,
+      "section_title": "ክፍል 4፡ አብራራ / አጭር መልስ (Essay / Short Answer)",
+      "question_type": "SHORT_ANSWER",
+      "question_text": "አዲስ የሶሻል ሚዲያ ካምፔን ለማቀድ የሚያስፈልጉ 3 ዋና ዋና ነገሮችን ዘርዝር/ሪ።",
+      "points": 1,
+      "choices": []
+    },
+    {
+      "question_number": 80,
+      "section_number": 4,
+      "section_title": "ክፍል 4፡ አብራራ / አጭር መልስ (Essay / Short Answer)",
+      "question_type": "SHORT_ANSWER",
+      "question_text": "እንደ አዲስ ማኔጀር በመጀመሪያዎቹ 90 ቀናት ውስጥ ለማከናወን የምታቅዳቸውን 3 ዋና ዋና ነገሮች አብራራ/ሪ።",
+      "points": 1,
+      "choices": []
+    }
+  ],
+  "answers": [
+    {
+      "question_number": 1,
+      "official_answer": "እውነት",
+      "primary_answer": "እውነት",
+      "accepted_answers": [
+        "እውነት",
+        "True",
+        "true",
+        "T"
+      ],
+      "english_equivalent": "True",
+      "amharic_equivalent": "እውነት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 2,
+      "official_answer": "ሐሰት",
+      "primary_answer": "ሐሰት",
+      "accepted_answers": [
+        "ሐሰት",
+        "False",
+        "false",
+        "F"
+      ],
+      "english_equivalent": "False",
+      "amharic_equivalent": "ሐሰት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 3,
+      "official_answer": "ሐሰት",
+      "primary_answer": "ሐሰት",
+      "accepted_answers": [
+        "ሐሰት",
+        "False",
+        "false",
+        "F"
+      ],
+      "english_equivalent": "False",
+      "amharic_equivalent": "ሐሰት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 4,
+      "official_answer": "እውነት",
+      "primary_answer": "እውነት",
+      "accepted_answers": [
+        "እውነት",
+        "True",
+        "true",
+        "T"
+      ],
+      "english_equivalent": "True",
+      "amharic_equivalent": "እውነት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 5,
+      "official_answer": "ሐሰት",
+      "primary_answer": "ሐሰት",
+      "accepted_answers": [
+        "ሐሰት",
+        "False",
+        "false",
+        "F"
+      ],
+      "english_equivalent": "False",
+      "amharic_equivalent": "ሐሰት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 6,
+      "official_answer": "እውነት",
+      "primary_answer": "እውነት",
+      "accepted_answers": [
+        "እውነት",
+        "True",
+        "true",
+        "T"
+      ],
+      "english_equivalent": "True",
+      "amharic_equivalent": "እውነት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 7,
+      "official_answer": "ሐሰት",
+      "primary_answer": "ሐሰት",
+      "accepted_answers": [
+        "ሐሰት",
+        "False",
+        "false",
+        "F"
+      ],
+      "english_equivalent": "False",
+      "amharic_equivalent": "ሐሰት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 8,
+      "official_answer": "እውነት",
+      "primary_answer": "እውነት",
+      "accepted_answers": [
+        "እውነት",
+        "True",
+        "true",
+        "T"
+      ],
+      "english_equivalent": "True",
+      "amharic_equivalent": "እውነት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 9,
+      "official_answer": "ሐሰት",
+      "primary_answer": "ሐሰት",
+      "accepted_answers": [
+        "ሐሰት",
+        "False",
+        "false",
+        "F"
+      ],
+      "english_equivalent": "False",
+      "amharic_equivalent": "ሐሰት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 10,
+      "official_answer": "ሐሰት",
+      "primary_answer": "ሐሰት",
+      "accepted_answers": [
+        "ሐሰት",
+        "False",
+        "false",
+        "F"
+      ],
+      "english_equivalent": "False",
+      "amharic_equivalent": "ሐሰት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 11,
+      "official_answer": "እውነት",
+      "primary_answer": "እውነት",
+      "accepted_answers": [
+        "እውነት",
+        "True",
+        "true",
+        "T"
+      ],
+      "english_equivalent": "True",
+      "amharic_equivalent": "እውነት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 12,
+      "official_answer": "ሐሰት",
+      "primary_answer": "ሐሰት",
+      "accepted_answers": [
+        "ሐሰት",
+        "False",
+        "false",
+        "F"
+      ],
+      "english_equivalent": "False",
+      "amharic_equivalent": "ሐሰት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 13,
+      "official_answer": "እውነት",
+      "primary_answer": "እውነት",
+      "accepted_answers": [
+        "እውነት",
+        "True",
+        "true",
+        "T"
+      ],
+      "english_equivalent": "True",
+      "amharic_equivalent": "እውነት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 14,
+      "official_answer": "ሐሰት",
+      "primary_answer": "ሐሰት",
+      "accepted_answers": [
+        "ሐሰት",
+        "False",
+        "false",
+        "F"
+      ],
+      "english_equivalent": "False",
+      "amharic_equivalent": "ሐሰት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 15,
+      "official_answer": "እውነት",
+      "primary_answer": "እውነት",
+      "accepted_answers": [
+        "እውነት",
+        "True",
+        "true",
+        "T"
+      ],
+      "english_equivalent": "True",
+      "amharic_equivalent": "እውነት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 16,
+      "official_answer": "ሐሰት (ማስታወሻ፦ የሰው ሀይል ማደራጀትና ማጋራት Organizing ይባላል)",
+      "primary_answer": "ሐሰት",
+      "accepted_answers": [
+        "ሐሰት",
+        "False",
+        "false",
+        "F"
+      ],
+      "english_equivalent": "False",
+      "amharic_equivalent": "ሐሰት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 17,
+      "official_answer": "እውነት",
+      "primary_answer": "እውነት",
+      "accepted_answers": [
+        "እውነት",
+        "True",
+        "true",
+        "T"
+      ],
+      "english_equivalent": "True",
+      "amharic_equivalent": "እውነት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 18,
+      "official_answer": "እውነት",
+      "primary_answer": "እውነት",
+      "accepted_answers": [
+        "እውነት",
+        "True",
+        "true",
+        "T"
+      ],
+      "english_equivalent": "True",
+      "amharic_equivalent": "እውነት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 19,
+      "official_answer": "ሐሰት",
+      "primary_answer": "ሐሰት",
+      "accepted_answers": [
+        "ሐሰት",
+        "False",
+        "false",
+        "F"
+      ],
+      "english_equivalent": "False",
+      "amharic_equivalent": "ሐሰት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 20,
+      "official_answer": "እውነት",
+      "primary_answer": "እውነት",
+      "accepted_answers": [
+        "እውነት",
+        "True",
+        "true",
+        "T"
+      ],
+      "english_equivalent": "True",
+      "amharic_equivalent": "እውነት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 21,
+      "official_answer": "መምራት (Leading) እና መቆጣጠር/መከታተል (Controlling)",
+      "primary_answer": "መምራት (Leading)",
+      "accepted_answers": [
+        "መምራት",
+        "Leading",
+        "መምራት (Leading)",
+        "መምራት እና መቆጣጠር",
+        "leading",
+        "memrat"
+      ],
+      "english_equivalent": "Leading",
+      "amharic_equivalent": "መምራት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 22,
+      "official_answer": "Time-bound (በጊዜ የተገደበ)",
+      "primary_answer": "Time-bound (በጊዜ የተገደበ)",
+      "accepted_answers": [
+        "Time-bound",
+        "Time Bound",
+        "time-bound",
+        "time bound",
+        "በጊዜ የተገደበ",
+        "በጊዜ የተወሰነ",
+        "Timebound"
+      ],
+      "english_equivalent": "Time-bound",
+      "amharic_equivalent": "በጊዜ የተገደበ",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 23,
+      "official_answer": "ዴሌጌሽን (Delegation)",
+      "primary_answer": "ዴሌጌሽን (Delegation)",
+      "accepted_answers": [
+        "ዴሌጌሽን",
+        "Delegation",
+        "delegation",
+        "ዴሊጌሽን",
+        "ስራን ማጋራት",
+        "ስራ ማጋራት"
+      ],
+      "english_equivalent": "Delegation",
+      "amharic_equivalent": "ዴሌጌሽን / ስራን ማጋራት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 24,
+      "official_answer": "የደንበኞች አገልግሎት (Customer Service)",
+      "primary_answer": "የደንበኞች አገልግሎት (Customer Service)",
+      "accepted_answers": [
+        "የደንበኞች አገልግሎት",
+        "Customer Service",
+        "customer service",
+        "የደንበኛ አገልግሎት",
+        "Customer Care"
+      ],
+      "english_equivalent": "Customer Service",
+      "amharic_equivalent": "የደንበኞች አገልግሎት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 25,
+      "official_answer": "ቫይራል (Viral)",
+      "primary_answer": "ቫይራል (Viral)",
+      "accepted_answers": [
+        "ቫይራል",
+        "Viral",
+        "viral",
+        "ቫይራል ሆነ",
+        "ተሰራጭ"
+      ],
+      "english_equivalent": "Viral",
+      "amharic_equivalent": "ቫይራል",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 26,
+      "official_answer": "የስራ አፈፃፀም ምዘና (Performance Appraisal)",
+      "primary_answer": "የስራ አፈፃፀም ምዘና (Performance Appraisal)",
+      "accepted_answers": [
+        "የስራ አፈፃፀም ምዘና",
+        "Performance Appraisal",
+        "performance appraisal",
+        "አፈፃፀም ምዘና",
+        "Performance Evaluation",
+        "ምዘና"
+      ],
+      "english_equivalent": "Performance Appraisal",
+      "amharic_equivalent": "የስራ አፈፃፀም ምዘና",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 27,
+      "official_answer": "የስራ ማራዘም/ማዘገየት (Procrastination)",
+      "primary_answer": "የስራ ማራዘም/ማዘገየት (Procrastination)",
+      "accepted_answers": [
+        "የስራ ማራዘም",
+        "የስራ ማዘገየት",
+        "Procrastination",
+        "procrastination",
+        "ማራዘም",
+        "ማዘገየት"
+      ],
+      "english_equivalent": "Procrastination",
+      "amharic_equivalent": "የስራ ማራዘም / ማዘገየት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 28,
+      "official_answer": "Informal (መደበኛ ያልሆነ)",
+      "primary_answer": "Informal (መደበኛ ያልሆነ)",
+      "accepted_answers": [
+        "Informal",
+        "informal",
+        "መደበኛ ያልሆነ",
+        "መደበኛ ያልሆነ ግንኙነት",
+        "ኢንፎርማል"
+      ],
+      "english_equivalent": "Informal",
+      "amharic_equivalent": "መደበኛ ያልሆነ",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 29,
+      "official_answer": "Conversion Rate",
+      "primary_answer": "Conversion Rate",
+      "accepted_answers": [
+        "Conversion",
+        "conversion",
+        "Conversion Rate",
+        "ኮንቨርዥን",
+        "የመቀየር መቶኛ"
+      ],
+      "english_equivalent": "Conversion",
+      "amharic_equivalent": "ኮንቨርዥን",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 30,
+      "official_answer": "ብሬንስቶርሚንግ (Brainstorming)",
+      "primary_answer": "ብሬንስቶርሚንግ (Brainstorming)",
+      "accepted_answers": [
+        "ብሬንስቶርሚንግ",
+        "Brainstorming",
+        "brainstorming",
+        "የአዕምሮ ውርወራ",
+        "ሀሳብ ማመንጨት"
+      ],
+      "english_equivalent": "Brainstorming",
+      "amharic_equivalent": "ብሬንስቶርሚንግ",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 31,
+      "official_answer": "ሞቲቬሽን/ማበረታቻ (Motivation)",
+      "primary_answer": "ሞቲቬሽን/ማበረታቻ (Motivation)",
+      "accepted_answers": [
+        "ሞቲቬሽን",
+        "ማበረታቻ",
+        "Motivation",
+        "motivation",
+        "ማነሳሳት",
+        "የስራ ተነሳሽነት"
+      ],
+      "english_equivalent": "Motivation",
+      "amharic_equivalent": "ሞቲቬሽን / ማበረታቻ",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 32,
+      "official_answer": "Content (የይዘት)",
+      "primary_answer": "Content (የይዘት)",
+      "accepted_answers": [
+        "Content",
+        "content",
+        "የይዘት",
+        "ይዘት",
+        "ኮንተንት"
+      ],
+      "english_equivalent": "Content",
+      "amharic_equivalent": "የይዘት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 33,
+      "official_answer": "Conflict (የግጭት አፈታት)",
+      "primary_answer": "Conflict (የግጭት አፈታት)",
+      "accepted_answers": [
+        "Conflict",
+        "conflict",
+        "የግጭት",
+        "ግጭት",
+        "Conflict Resolution",
+        "ኮንፍሊክት"
+      ],
+      "english_equivalent": "Conflict",
+      "amharic_equivalent": "ግጭት / የግጭት አፈታት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 34,
+      "official_answer": "Strategic (ስትራቴጂክ)",
+      "primary_answer": "Strategic (ስትራቴጂክ)",
+      "accepted_answers": [
+        "Strategic",
+        "strategic",
+        "ስትራቴጂክ",
+        "ስትራቴጂካዊ",
+        "ስትራቴጂ"
+      ],
+      "english_equivalent": "Strategic",
+      "amharic_equivalent": "ስትራቴጂክ",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 35,
+      "official_answer": "አናሊቲክስ (Analytics)",
+      "primary_answer": "አናሊቲክስ (Analytics)",
+      "accepted_answers": [
+        "አናሊቲክስ",
+        "Analytics",
+        "analytics",
+        "የመረጃ ትንተና",
+        "ትንተና"
+      ],
+      "english_equivalent": "Analytics",
+      "amharic_equivalent": "አናሊቲክስ",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 36,
+      "official_answer": "One-on-One (የአንድ ለአንድ)",
+      "primary_answer": "One-on-One (የአንድ ለአንድ)",
+      "accepted_answers": [
+        "One-on-One",
+        "one-on-one",
+        "One on One",
+        "የአንድ ለአንድ",
+        "አንድ ለአንድ",
+        "1-on-1",
+        "1 on 1"
+      ],
+      "english_equivalent": "One-on-One",
+      "amharic_equivalent": "የአንድ ለአንድ",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 37,
+      "official_answer": "Crisis (የአደጋ/የችግር)",
+      "primary_answer": "Crisis (የአደጋ/የችግር)",
+      "accepted_answers": [
+        "Crisis",
+        "crisis",
+        "የአደጋ",
+        "የችግር",
+        "ድንገተኛ አደጋ",
+        "ክራይሲስ"
+      ],
+      "english_equivalent": "Crisis",
+      "amharic_equivalent": "Crisis / የአደጋ / የችግር",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 38,
+      "official_answer": "Team Spirit / Cohesion (የቡድን መንፈስ/ስብስብ)",
+      "primary_answer": "Team Spirit / Cohesion (የቡድን መንፈስ/ስብስብ)",
+      "accepted_answers": [
+        "Team Spirit",
+        "Cohesion",
+        "የቡድን መንፈስ",
+        "ቡድን መንፈስ",
+        "ስብስብ",
+        "Team",
+        "team"
+      ],
+      "english_equivalent": "Team Spirit / Cohesion",
+      "amharic_equivalent": "የቡድን መንፈስ / ስብስብ",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 39,
+      "official_answer": "ኦፕሬሽንስ (Operations / Daily Operations)",
+      "primary_answer": "ኦፕሬሽንስ (Operations / Daily Operations)",
+      "accepted_answers": [
+        "Daily",
+        "Operations",
+        "ኦፕሬሽንስ",
+        "ዕለታዊ",
+        "ዕለት ተዕለት",
+        "መደበኛ",
+        "Daily Operations"
+      ],
+      "english_equivalent": "Daily / Operations",
+      "amharic_equivalent": "ዕለታዊ / ኦፕሬሽንስ",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 40,
+      "official_answer": "Leading by Example (በአርአያነት መምራት)",
+      "primary_answer": "Leading by Example (በአርአያነት መምራት)",
+      "accepted_answers": [
+        "Leading",
+        "leading",
+        "መምራት",
+        "በአርአያነት መምራት",
+        "በአርአያነት",
+        "Lead",
+        "lead"
+      ],
+      "english_equivalent": "Leading",
+      "amharic_equivalent": "በአርአያነት መምራት",
+      "case_sensitive": false,
+      "whitespace_normalize": true,
+      "punctuation_normalize": true
+    },
+    {
+      "question_number": 41,
+      "official_answer": "ለ) ቡድኑን በመምራት፣ በማስተባበርና በመደገፍ ግቦችን ማሳካት",
+      "correct_choice_key": "ለ",
+      "correct_choice_text": "ቡድኑን በመምራት፣ በማስተባበርና በመደገፍ ግቦችን ማሳካት",
+      "accepted_answers": [
+        "ለ"
+      ],
+      "points": 2
+    },
+    {
+      "question_number": 42,
+      "official_answer": "ሐ) ስራዎችን በጥደፊያቸው እና በስራው ክብደት/አስፈለጊነት ለይቶ ማቀድ",
+      "correct_choice_key": "ሐ",
+      "correct_choice_text": "ስራዎችን በጥደፊያቸው እና በስራው ክብደት/አስፈለጊነት ለይቶ ማቀድ",
+      "accepted_answers": [
+        "ሐ"
+      ],
+      "points": 2
+    },
+    {
+      "question_number": 43,
+      "official_answer": "ለ) ኃላፊነቱንና ስልጣኑን ሰጥቶ ግልጽ ግብና መስፈርት ማስቀመጥ",
+      "correct_choice_key": "ለ",
+      "correct_choice_text": "ኃላፊነቱንና ስልጣኑን ሰጥቶ ግልጽ ግብና መስፈርት ማስቀመጥ",
+      "accepted_answers": [
+        "ለ"
+      ],
+      "points": 2
+    },
+    {
+      "question_number": 44,
+      "official_answer": "ለ) ሁለቱንም ወገኖች ለይተው በማዳመጥ ችግሩን በጋራ መፍታት",
+      "correct_choice_key": "ለ",
+      "correct_choice_text": "ሁለቱንም ወገኖች ለይተው በማዳመጥ ችግሩን በጋራ መፍታት",
+      "accepted_answers": [
+        "ለ"
+      ],
+      "points": 2
+    },
+    {
+      "question_number": 45,
+      "official_answer": "ለ) ከሰራተኛው ጋር ለብቻ ተቀብለው ውይይት በማድረግ ምክንያቱን መረዳት",
+      "correct_choice_key": "ለ",
+      "correct_choice_text": "ከሰራተኛው ጋር ለብቻ ተቀብለው ውይይት በማድረግ ምክንያቱን መረዳት",
+      "accepted_answers": [
+        "ለ"
+      ],
+      "points": 2
+    },
+    {
+      "question_number": 46,
+      "official_answer": "ለ) በግል በመገናኘት ጥንካሬውን አግንኖ ድክመቱን በግልጽ ማሳየት",
+      "correct_choice_key": "ለ",
+      "correct_choice_text": "በግል በመገናኘት ጥንካሬውን አግንኖ ድክመቱን በግልጽ ማሳየት",
+      "accepted_answers": [
+        "ለ"
+      ],
+      "points": 2
+    },
+    {
+      "question_number": 47,
+      "official_answer": "ሐ) በትህትና ምላሽ መስጠትና ችግሩን በግል መልእክት (DM) ለመፍታት መሞከር",
+      "correct_choice_key": "ሐ",
+      "correct_choice_text": "በትህትና ምላሽ መስጠትና ችግሩን በግል መልእክት (DM) ለመፍታት መሞከር",
+      "accepted_answers": [
+        "ሐ"
+      ],
+      "points": 2
+    },
+    {
+      "question_number": 48,
+      "official_answer": "ሐ) የጥራት ደረጃዎችን (Standard Templates) በማዘጋጀት ስራን ማፋጠን",
+      "correct_choice_key": "ሐ",
+      "correct_choice_text": "የጥራት ደረጃዎችን (Standard Templates) በማዘጋጀት ስራን ማፋጠን",
+      "accepted_answers": [
+        "ሐ"
+      ],
+      "points": 2
+    },
+    {
+      "question_number": 49,
+      "official_answer": "ለ) መዘገየቱን ቀድሞ በማሳወቅ ምክንያቱን እና አዲሱን የጊዜ ገደብ ማብራራት",
+      "correct_choice_key": "ለ",
+      "correct_choice_text": "መዘገየቱን ቀድሞ በማሳወቅ ምክንያቱን እና አዲሱን የጊዜ ገደብ ማብራራት",
+      "accepted_answers": [
+        "ለ"
+      ],
+      "points": 2
+    },
+    {
+      "question_number": 50,
+      "official_answer": "ለ) ግልጽ ግቦችን ማስቀመጥ፣ ክፍት ውይይት ማድረግና ጥሩ ስራን ማወደስ",
+      "correct_choice_key": "ለ",
+      "correct_choice_text": "ግልጽ ግቦችን ማስቀመጥ፣ ክፍት ውይይት ማድረግና ጥሩ ስራን ማወደስ",
+      "accepted_answers": [
+        "ለ"
+      ],
+      "points": 2
+    },
+    {
+      "question_number": 51,
+      "official_answer": "ሀ) ስልጠናዎችንና የማብቂያ እድሎችን ማመቻቸት",
+      "correct_choice_key": "ሀ",
+      "correct_choice_text": "ስልጠናዎችንና የማብቂያ እድሎችን ማመቻቸት",
+      "accepted_answers": [
+        "ሀ"
+      ],
+      "points": 2
+    },
+    {
+      "question_number": 52,
+      "official_answer": "ለ) የድርጅቱን ምርት ወይም አገልግሎት ይገዛሉ ተብለው የተለዩ የተወሰኑ የህብረተሰብ ክፍሎች",
+      "correct_choice_key": "ለ",
+      "correct_choice_text": "የድርጅቱን ምርት ወይም አገልግሎት ይገዛሉ ተብለው የተለዩ የተወሰኑ የህብረተሰብ ክፍሎች",
+      "accepted_answers": [
+        "ለ"
+      ],
+      "points": 2
+    },
+    {
+      "question_number": 53,
+      "official_answer": "ለ) መረጃዎችን እና የቡድኑን አስተያየት አጣጥሞ መወሰን",
+      "correct_choice_key": "ለ",
+      "correct_choice_text": "መረጃዎችን እና የቡድኑን አስተያየት አጣጥሞ መወሰን",
+      "accepted_answers": [
+        "ለ"
+      ],
+      "points": 2
+    },
+    {
+      "question_number": 54,
+      "official_answer": "ሀ) የጠነከረ ክትትልና ድጋፍ የሚያስችል የጊዜ ሰሌዳ (Timeline) ማዘጋጀት አለበት",
+      "correct_choice_key": "ሀ",
+      "correct_choice_text": "የጠነከረ ክትትልና ድጋፍ የሚያስችል የጊዜ ሰሌዳ (Timeline) ማዘጋጀት አለበት",
+      "accepted_answers": [
+        "ሀ"
+      ],
+      "points": 2
+    },
+    {
+      "question_number": 55,
+      "official_answer": "ለ) የትኛውን ይዘት፣ ለማን፣ መቼ እና ለምን እንደምናቀርብ የሚያሳይ የተቀናጀ እቅድ",
+      "correct_choice_key": "ለ",
+      "correct_choice_text": "የትኛውን ይዘት፣ ለማን፣ መቼ እና ለምን እንደምናቀርብ የሚያሳይ የተቀናጀ እቅድ",
+      "accepted_answers": [
+        "ለ"
+      ],
+      "points": 2
+    },
+    {
+      "question_number": 56,
+      "official_answer": "ለ) ሀሳቡን አዳምጦ አመርቂ ከሆነ ተግባራዊ እንዲሆን ማበረታታት",
+      "correct_choice_key": "ለ",
+      "correct_choice_text": "ሀሳቡን አዳምጦ አመርቂ ከሆነ ተግባራዊ እንዲሆን ማበረታታት",
+      "accepted_answers": [
+        "ለ"
+      ],
+      "points": 2
+    },
+    {
+      "question_number": 57,
+      "official_answer": "ሀ) የስራ ጫናን በትክክል ማከፋፈልና እረፍትን ማበረታታት",
+      "correct_choice_key": "ሀ",
+      "correct_choice_text": "የስራ ጫናን በትክክል ማከፋፈልና እረፍትን ማበረታታት",
+      "accepted_answers": [
+        "ሀ"
+      ],
+      "points": 2
+    },
+    {
+      "question_number": 58,
+      "official_answer": "ሀ) በሶሻል ሚዲያ ለወጣው ወጪ እና ኢንቨስትመንት የተገኘው የትርፍ/ውጤት መጠን",
+      "correct_choice_key": "ሀ",
+      "correct_choice_text": "በሶሻል ሚዲያ ለወጣው ወጪ እና ኢንቨስትመንት የተገኘው የትርፍ/ውጤት መጠን",
+      "accepted_answers": [
+        "ሀ"
+      ],
+      "points": 2
+    },
+    {
+      "question_number": 59,
+      "official_answer": "ለ) ስብሰባው ከመጀመሩ በፊት ግልጽ አጀንዳና አላማ ማዘጋጀት",
+      "correct_choice_key": "ለ",
+      "correct_choice_text": "ስብሰባው ከመጀመሩ በፊት ግልጽ አጀንዳና አላማ ማዘጋጀት",
+      "accepted_answers": [
+        "ለ"
+      ],
+      "points": 2
+    },
+    {
+      "question_number": 60,
+      "official_answer": "ሀ) Emotional Intelligence (ስሜታዊ ብልህነት)",
+      "correct_choice_key": "ሀ",
+      "correct_choice_text": "Emotional Intelligence (ስሜታዊ ብልህነት)",
+      "accepted_answers": [
+        "ሀ"
+      ],
+      "points": 2
+    },
+    {
+      "question_number": 61,
+      "official_answer": "1. አስተሳሰብን መቀየር (Mindset Shift)፦ ከ'እኔ ራሴ የመስራት' ልማድ ወጥቶ 'በሌሎች በኩል ስራን ማሳካት' ላይ ማተኮር ፈተና ይሆናል።\n2. የግንኙነት ለውጥ (Relationship Dynamics)፦ ከዚህ ቀደም የነበሩ የእኩያ/የጓደኝነት ግንኙነቶችን ወደ መደበኛ የስራ መሪና ተመሪ ግንኙነት መቀየር።",
+      "model_answer": "1. አስተሳሰብን መቀየር (Mindset Shift)፦ ከ'እኔ ራሴ የመስራት' ልማድ ወጥቶ 'በሌሎች በኩል ስራን ማሳካት' ላይ ማተኮር ፈተና ይሆናል።\n2. የግንኙነት ለውጥ (Relationship Dynamics)፦ ከዚህ ቀደም የነበሩ የእኩያ/የጓደኝነት ግንኙነቶችን ወደ መደበኛ የስራ መሪና ተመሪ ግንኙነት መቀየር።",
+      "required_concepts": [
+        "Mindset Shift / አስተሳሰብ መቀየር",
+        "በሌሎች በኩል ስራን ማሳካት",
+        "Relationship Dynamics / የግንኙነት ለውጥ"
+      ],
+      "accepted_keywords": [
+        "mindset",
+        "አስተሳሰብ",
+        "relationship",
+        "ግንኙነት",
+        "ጓደኝነት",
+        "ስራ ማጋራት",
+        "መሪ"
+      ],
+      "min_concepts": 1,
+      "grading_mode": "AUTO",
+      "points": 1,
+      "admin_notes": "Authoritative rubric for Q61: ከአስፈጻሚነት ወደ ማኔጀርነት የመሸጋገር ፈተናዎች"
+    },
+    {
+      "question_number": 62,
+      "official_answer": "የሶሻል ሚዲያ ቢዝነስ በከፍተኛ የፍጥነት ለውጥ፣ የቀጥታ የደንበኞች ግብረ-መልስ (Real-time feedback) እና የ24/7 ተዳራሽነት ይለያል። የማኔጀር ሚና በፈጣን ውሳኔ አሰጣጥ፣ ይዘቶችን በጥራትና በፈጠራ በመምራት እንዲሁም የደንበኞችን አስተያየት አጥንቶ ስትራቴጂን ወዲያውኑ በማስተካከል ላይ ያተኩራል።",
+      "model_answer": "የሶሻል ሚዲያ ቢዝነስ በከፍተኛ የፍጥነት ለውጥ፣ የቀጥታ የደንበኞች ግብረ-መልስ (Real-time feedback) እና የ24/7 ተዳራሽነት ይለያል። የማኔጀር ሚና በፈጣን ውሳኔ አሰጣጥ፣ ይዘቶችን በጥራትና በፈጠራ በመምራት እንዲሁም የደንበኞችን አስተያየት አጥንቶ ስትራቴጂን ወዲያውኑ በማስተካከል ላይ ያተኩራል።",
+      "required_concepts": [
+        "ፈጣን ለውጥ / ፍጥነት",
+        "Real-time feedback / የቀጥታ ግብረ-መልስ",
+        "ፈጣን ውሳኔ / ስትራቴጂ"
+      ],
+      "accepted_keywords": [
+        "ፍጥነት",
+        "real-time",
+        "ግብረ-መልስ",
+        "feedback",
+        "ውሳኔ",
+        "ይዘት",
+        "ፈጠራ",
+        "24/7"
+      ],
+      "min_concepts": 1,
+      "grading_mode": "AUTO",
+      "points": 1,
+      "admin_notes": "Authoritative rubric for Q62: የሶሻል ሚዲያ ቢዝነስ ልዩነት እና የማኔጀር ሚና"
+    },
+    {
+      "question_number": 63,
+      "official_answer": "S (Specific): ግልጽና የተወሰነ ግብ።\nM (Measurable): በቁጥር ወይም መስፈርት የሚለካ።\nA (Achievable): ሊሳካ የሚችልና ከእውነታው ያልወጣ።\nR (Relevant): ከድርጅቱ ትልቅ ዓላማ ጋር የሚጣጣም።\nT (Time-bound): የጊዜ ገደብ ያለው።",
+      "model_answer": "S (Specific): ግልጽና የተወሰነ ግብ።\nM (Measurable): በቁጥር ወይም መስፈርት የሚለካ።\nA (Achievable): ሊሳካ የሚችልና ከእውነታው ያልወጣ።\nR (Relevant): ከድርጅቱ ትልቅ ዓላማ ጋር የሚጣጣም።\nT (Time-bound): የጊዜ ገደብ ያለው።",
+      "required_concepts": [
+        "Specific / ግልጽ",
+        "Measurable / የሚለካ",
+        "Achievable / ሊሳካ የሚችል",
+        "Relevant / የሚጣጣም",
+        "Time-bound / የጊዜ ገደብ"
+      ],
+      "accepted_keywords": [
+        "specific",
+        "measurable",
+        "achievable",
+        "relevant",
+        "time-bound",
+        "የተወሰነ",
+        "የሚለካ",
+        "ሊሳካ",
+        "ጊዜ ገደብ"
+      ],
+      "min_concepts": 2,
+      "grading_mode": "AUTO",
+      "points": 1,
+      "admin_notes": "Authoritative rubric for Q63: SMART Goals ማብራሪያ"
+    },
+    {
+      "question_number": 64,
+      "official_answer": "ለማኔጀሩ፦ በስትራቴጂካዊና በከፍተኛ ደረጃ ውሳኔዎች ላይ እንዲያተኩር ጊዜ ይሰጣል።\nለቡድኑ፦ የቡድን አባላት አዳዲስ ክህሎቶችን እንዲያዳብሩ፣ በራስ መተማመናቸው እንዲጨምር እና የባለቤትነት ስሜት እንዲሰማቸው ያደርጋል።",
+      "model_answer": "ለማኔጀሩ፦ በስትራቴጂካዊና በከፍተኛ ደረጃ ውሳኔዎች ላይ እንዲያተኩር ጊዜ ይሰጣል።\nለቡድኑ፦ የቡድን አባላት አዳዲስ ክህሎቶችን እንዲያዳብሩ፣ በራስ መተማመናቸው እንዲጨምር እና የባለቤትነት ስሜት እንዲሰማቸው ያደርጋል።",
+      "required_concepts": [
+        "ለማኔጀሩ: ስትራቴጂካዊ ስራዎች ላይ ማተኮር",
+        "ለቡድኑ: ክህሎት ማሳደግ እና በራስ መተማመን"
+      ],
+      "accepted_keywords": [
+        "ጊዜ",
+        "ስትራቴጂ",
+        "ክህሎት",
+        "በራስ መተማመን",
+        "ባለቤትነት",
+        "እድገት"
+      ],
+      "min_concepts": 1,
+      "grading_mode": "AUTO",
+      "points": 1,
+      "admin_notes": "Authoritative rubric for Q64: የDelegation (ስራን ማጋራት) ጥቅም"
+    },
+    {
+      "question_number": 65,
+      "official_answer": "1. ሁለቱንም ወገኖች ለይቶና በጥሞና በማዳመጥ የችግሩን መንስኤ መረዳት።\n2. የጋራ መግባቢያ ነጥቦችንና ዋናውን የልዩነት ምክንያት ለይቶ ማውጣት።\n3. ሁለቱም ወገኖች የተስማሙበትን የጋራ መፍትሔ ማቀድና አፈፃፀሙን መከታተል ።",
+      "model_answer": "1. ሁለቱንም ወገኖች ለይቶና በጥሞና በማዳመጥ የችግሩን መንስኤ መረዳት።\n2. የጋራ መግባቢያ ነጥቦችንና ዋናውን የልዩነት ምክንያት ለይቶ ማውጣት።\n3. ሁለቱም ወገኖች የተስማሙበትን የጋራ መፍትሔ ማቀድና አፈፃፀሙን መከታተል ።",
+      "required_concepts": [
+        "በጥሞና ማዳመጥ / መንስኤ መረዳት",
+        "የጋራ ነጥቦችን መለየት",
+        "የጋራ መፍትሄ ማቀድ ও መከታተል"
+      ],
+      "accepted_keywords": [
+        "ማዳመጥ",
+        "መንስኤ",
+        "ልዩነት",
+        "የጋራ",
+        "መፍትሔ",
+        "ክትትል",
+        "መስማማት"
+      ],
+      "min_concepts": 1,
+      "grading_mode": "AUTO",
+      "points": 1,
+      "admin_notes": "Authoritative rubric for Q65: ግጭትን ለመፍታት 3 ዋና ደረጃዎች"
+    },
+    {
+      "question_number": 66,
+      "official_answer": "መጀመሪያ (የላይኛው ዳቦ)፦ አዎንታዊና የማበረታቻ አስተያየት በመስጠት መጀመር (ጥንካሬን ማመስገን)።\nመሃል (ስጋው)፦ ሊሻሻል የሚገባውን ዋና ስህተት/ድክመት በግልጽና አክብሮት ባለው መልኩ ማቅረብ።\nመጨረሻ (የታችኛው ዳቦ)፦ ድጋፍን፣ ተስፋንና አዎንታዊ ማጠቃለያን በመስጠት ውይይቱን ማጠናቀቅ።",
+      "model_answer": "መጀመሪያ (የላይኛው ዳቦ)፦ አዎንታዊና የማበረታቻ አስተያየት በመስጠት መጀመር (ጥንካሬን ማመስገን)።\nመሃል (ስጋው)፦ ሊሻሻል የሚገባውን ዋና ስህተት/ድክመት በግልጽና አክብሮት ባለው መልኩ ማቅረብ።\nመጨረሻ (የታችኛው ዳቦ)፦ ድጋፍን፣ ተስፋንና አዎንታዊ ማጠቃለያን በመስጠት ውይይቱን ማጠናቀቅ።",
+      "required_concepts": [
+        "አዎንታዊ/ጥንካሬ መጀመር",
+        "መሃል ላይ ድክመት/ማሻሻያ ማቅረብ",
+        "አዎንታዊ ማጠቃለያ/ድጋፍ"
+      ],
+      "accepted_keywords": [
+        "አዎንታዊ",
+        "ጥንካሬ",
+        "ድክመት",
+        "ስህተት",
+        "ማሻሻል",
+        "ማጠቃለያ",
+        "ድጋፍ",
+        "ዳቦ"
+      ],
+      "min_concepts": 1,
+      "grading_mode": "AUTO",
+      "points": 1,
+      "admin_notes": "Authoritative rubric for Q66: የ 'Sandwich Technique' አቀራረብ"
+    },
+    {
+      "question_number": 67,
+      "official_answer": "በሶሻል ሚዲያ ላይ የሚፈጠሩ መጥፎ ወሬዎች ወይም ቴክኒካዊ ስህተቶች በደቂቃዎች ውስጥ የድርጅቱን ስም ሊያበላሹ ስለሚችሉ፣ ድንገተኛ አደጋዎችን በፍጥነት፣ በግልጽነትና በሙያዊ ብቃት ለመቆጣጠር ያስችላል።",
+      "model_answer": "በሶሻል ሚዲያ ላይ የሚፈጠሩ መጥፎ ወሬዎች ወይም ቴክኒካዊ ስህተቶች በደቂቃዎች ውስጥ የድርጅቱን ስም ሊያበላሹ ስለሚችሉ፣ ድንገተኛ አደጋዎችን በፍጥነት፣ በግልጽነትና በሙያዊ ብቃት ለመቆጣጠር ያስችላል።",
+      "required_concepts": [
+        "የድርጅቱን ስም/ዝና መጠበቅ",
+        "ድንገተኛ አደጋዎችን በፍጥነት እና በሙያዊ ብቃት መቆጣጠር"
+      ],
+      "accepted_keywords": [
+        "ስም",
+        "ዝና",
+        "አደጋ",
+        "ፍጥነት",
+        "መቆጣጠር",
+        "crisis",
+        "ቴክኒክ",
+        "ግልጽነት"
+      ],
+      "min_concepts": 1,
+      "grading_mode": "AUTO",
+      "points": 1,
+      "admin_notes": "Authoritative rubric for Q67: የ Crisis Management አስፈላጊነት"
+    },
+    {
+      "question_number": 68,
+      "official_answer": "ጥሩ ስራዎችን እውቅና መስጠት፣ የስራ እድገትና የስልጠና እድሎችን ማመቻቸት፣ አዎንታዊ የስራ አካባቢ መፍጠር እና የሰራተኞችን ፍላጎት ማዳመጥ።",
+      "model_answer": "ጥሩ ስራዎችን እውቅና መስጠት፣ የስራ እድገትና የስልጠና እድሎችን ማመቻቸት፣ አዎንታዊ የስራ አካባቢ መፍጠር እና የሰራተኞችን ፍላጎት ማዳመጥ።",
+      "required_concepts": [
+        "እውቅና መስጠት",
+        "ስልጠና/የእድገት እድል",
+        "አዎንታዊ አካባቢ / ማዳመጥ"
+      ],
+      "accepted_keywords": [
+        "እውቅና",
+        "ማመስገን",
+        "ስልጠና",
+        "እድገት",
+        "አካባቢ",
+        "ፍላጎት",
+        "ተነሳሽነት"
+      ],
+      "min_concepts": 1,
+      "grading_mode": "AUTO",
+      "points": 1,
+      "admin_notes": "Authoritative rubric for Q68: የተነሳሽነት (Motivation) ማሳደጊያ የማኔጀር ሚና"
+    },
+    {
+      "question_number": 69,
+      "official_answer": "አስቀድሞ የጥራት ደረጃ መስፈርቶችን (Templates & Guidelines) ማዘጋጀት፤ ችግር ሲፈጥር የስራ ቅደም-ተከተል በማውጣት ዋና ዋና ክፍሎችን ቅድሚያ መስጠት ወይም ተጨማሪ ሀይል በመመደብ ጥራቱን የጠበቀ ስራ በጊዜ ማጠናቀቅ።",
+      "model_answer": "አስቀድሞ የጥራት ደረጃ መስፈርቶችን (Templates & Guidelines) ማዘጋጀት፤ ችግር ሲፈጥር የስራ ቅደም-ተከተል በማውጣት ዋና ዋና ክፍሎችን ቅድሚያ መስጠት ወይም ተጨማሪ ሀይል በመመደብ ጥራቱን የጠበቀ ስራ በጊዜ ማጠናቀቅ።",
+      "required_concepts": [
+        "የጥራት መመዘኛ/Templates አስቀድሞ ማዘጋጀት",
+        "ቅደም-ተከተል/ቅድሚያ መስጠት ወይም ሀይል መጨመር"
+      ],
+      "accepted_keywords": [
+        "ደረጃ",
+        "መስፈርት",
+        "template",
+        "ቅድሚያ",
+        "ጊዜ",
+        "ቅደም ተከተል",
+        "ጥራት"
+      ],
+      "min_concepts": 1,
+      "grading_mode": "AUTO",
+      "points": 1,
+      "admin_notes": "Authoritative rubric for Q69: ጥራት (Quality) እና የጊዜ ገደብ (Deadline) ማመዛዘኛ"
+    },
+    {
+      "question_number": 70,
+      "official_answer": "የችግሮችን ትክክለኛ መንስኤ ለመረዳት፣ በሰራተኞች ዘንድ እምነትና መከባበርን ለመገንባት፣ እንዲሁም የተሳሳቱ መረጃዎችና አላስፈላጊ ግጭቶች እንዳይፈጠሩ ለመከላከል ይረዳል።",
+      "model_answer": "የችግሮችን ትክክለኛ መንስኤ ለመረዳት፣ በሰራተኞች ዘንድ እምነትና መከባበርን ለመገንባት፣ እንዲሁም የተሳሳቱ መረጃዎችና አላስፈላጊ ግጭቶች እንዳይፈጠሩ ለመከላከል ይረዳል።",
+      "required_concepts": [
+        "የችግሩን መንስኤ መረዳት",
+        "እምነትና መከባበር መገንባት",
+        "ስህተትንና ግጭትን መከላከል"
+      ],
+      "accepted_keywords": [
+        "መንስኤ",
+        "እምነት",
+        "መከባበር",
+        "ግጭት",
+        "መረዳት",
+        "አዳማጭ",
+        "ግንኙነት"
+      ],
+      "min_concepts": 1,
+      "grading_mode": "AUTO",
+      "points": 1,
+      "admin_notes": "Authoritative rubric for Q70: Active Listening ለአንድ ማኔጀር ያለው አስፈላጊነት"
+    },
+    {
+      "question_number": 71,
+      "official_answer": "ግላዊ ስሜትን በማስወገድ የሰራተኛውን ስራ በግልጽ ቁጥር፣ በውጤት እና በዓላማ መለኪያ (ለምሳሌ፡ የልጥፎች ብዛት፣ የሽያጭ መጠን) ለማስቀመጥ እና ፍትሃዊ ምዘና ለማካሄድ ያገለግላሉ።",
+      "model_answer": "ግላዊ ስሜትን በማስወገድ የሰራተኛውን ስራ በግልጽ ቁጥር፣ በውጤት እና በዓላማ መለኪያ (ለምሳሌ፡ የልጥፎች ብዛት፣ የሽያጭ መጠን) ለማስቀመጥ እና ፍትሃዊ ምዘና ለማካሄድ ያገለግላሉ።",
+      "required_concepts": [
+        "ግላዊ ስሜትን ማስወገድ",
+        "በቁጥርና በውጤት መለካት",
+        "ፍትሃዊ ምዘና ማካሄድ"
+      ],
+      "accepted_keywords": [
+        "ቁጥር",
+        "መለኪያ",
+        "ውጤት",
+        "ፍትሃዊ",
+        "ምዘና",
+        "ስሜት",
+        "አፈፃፀም"
+      ],
+      "min_concepts": 1,
+      "grading_mode": "AUTO",
+      "points": 1,
+      "admin_notes": "Authoritative rubric for Q71: KPIs አፈፃፀምን ለመገምገም ያላቸው ጥቅም"
+    },
+    {
+      "question_number": 72,
+      "official_answer": "የተከታይ ብዛት (Follower Count) ተመልካቹ ይዘቱን በእርግጥ ይወደዋል ወይም ይከታተለዋል የሚለውን አያረጋግጥም፤ Engagement Rate ግን ደንበኞች ከይዘቱ ጋር ያላቸውን ትክክለኛ ግንኙነት (Like, Comment, Share) ስለሚለካ የይዘቱን ውጤታማነት በትክክል ያሳያል።",
+      "model_answer": "የተከታይ ብዛት (Follower Count) ተመልካቹ ይዘቱን በእርግጥ ይወደዋል ወይም ይከታተለዋል የሚለውን አያረጋግጥም፤ Engagement Rate ግን ደንበኞች ከይዘቱ ጋር ያላቸውን ትክክለኛ ግንኙነት (Like, Comment, Share) ስለሚለካ የይዘቱን ውጤታማነት በትክክል ያሳያል።",
+      "required_concepts": [
+        "Follower Count ፍላጎትን አያረጋግጥም",
+        "Engagement Rate ትክክለኛ መስተጋብር (Like, Comment, Share) ይለካል"
+      ],
+      "accepted_keywords": [
+        "ተከታይ",
+        "engagement",
+        "like",
+        "comment",
+        "share",
+        "መስተጋብር",
+        "ግንኙነት",
+        "ውጤታማነት"
+      ],
+      "min_concepts": 1,
+      "grading_mode": "AUTO",
+      "points": 1,
+      "admin_notes": "Authoritative rubric for Q72: Engagement Rate ከ Follower Count የሚበልጥበት ምክንያት"
+    },
+    {
+      "question_number": 73,
+      "official_answer": "ግልጽ የቡድን ግብ ማስቀመጥ፣ ክፍት የምክክር ባህል መፍጠር፣ የስራ ክፍፍልን በፍትሃዊነት ማካሄድ እና በሰራተኞች መካከል ትብብር እንጂ አላስፈላጊ ውድድር እንዳይኖር ማድረግ።",
+      "model_answer": "ግልጽ የቡድን ግብ ማስቀመጥ፣ ክፍት የምክክር ባህል መፍጠር፣ የስራ ክፍፍልን በፍትሃዊነት ማካሄድ እና በሰራተኞች መካከል ትብብር እንጂ አላስፈላጊ ውድድር እንዳይኖር ማድረግ።",
+      "required_concepts": [
+        "ግልጽ ግብ ማስቀመጥ",
+        "ክፍት ውይይት/ባህል",
+        "ፍትሃዊ የስራ ክፍፍል",
+        "ትብብር ማበረታታት"
+      ],
+      "accepted_keywords": [
+        "ግብ",
+        "ውይይት",
+        "ክፍፍል",
+        "ትብብር",
+        "ፍትሃዊ",
+        "ቡድን",
+        "አንድነት"
+      ],
+      "min_concepts": 1,
+      "grading_mode": "AUTO",
+      "points": 1,
+      "admin_notes": "Authoritative rubric for Q73: የቡድን ስራን (Teamwork) ለማጎልበት የማኔጀር ሚና"
+    },
+    {
+      "question_number": 74,
+      "official_answer": "መጀመሪያ ከሰራተኛው ጋር በግል ተቀብሎ በመወያየት የማረፈዱን ትክክለኛ ምክንያት መረዳት፤ ችግሩን ለመቅረፍ ድጋፍ ማድረግ፤ በተደጋጋሚ የሚቀጥል ከሆነ ግን የድርጅቱን መመሪያ ተከተሎ የጽሁፍ ማስጠንቀቂያና የማስተካከያ እርምጃ መውሰድ።",
+      "model_answer": "መጀመሪያ ከሰራተኛው ጋር በግል ተቀብሎ በመወያየት የማረፈዱን ትክክለኛ ምክንያት መረዳት፤ ችግሩን ለመቅረፍ ድጋፍ ማድረግ፤ በተደጋጋሚ የሚቀጥል ከሆነ ግን የድርጅቱን መመሪያ ተከተሎ የጽሁፍ ማስጠንቀቂያና የማስተካከያ እርምጃ መውሰድ።",
+      "required_concepts": [
+        "በግል መወያየትና ምክንያት መረዳት",
+        "ድጋፍ ማድረግ",
+        "ከተደጋገመ ማስጠንቀቂያ/ደንብ መከተል"
+      ],
+      "accepted_keywords": [
+        "ግል",
+        "ውይይት",
+        "ምክንያት",
+        "ድጋፍ",
+        "ማስጠንቀቂያ",
+        "መመሪያ",
+        "እርምጃ"
+      ],
+      "min_concepts": 1,
+      "grading_mode": "AUTO",
+      "points": 1,
+      "admin_notes": "Authoritative rubric for Q74: ለሚያረፍድ ሰራተኛ የሚወሰድ እርምጃ"
+    },
+    {
+      "question_number": 75,
+      "official_answer": "አስፈላጊና አስቸኳይ ስራዎችን ለይቶ ለመስራት፣ የጭንቀት መጠንን ለመቀነስ፣ የቡድኑን ምርታማነት ለማሳደግ እና የድርጅቱን ግቦች በጊዜ ገደባቸው ለማሳካት ይረዳል።",
+      "model_answer": "አስፈላጊና አስቸኳይ ስራዎችን ለይቶ ለመስራት፣ የጭንቀት መጠንን ለመቀነስ፣ የቡድኑን ምርታማነት ለማሳደግ እና የድርጅቱን ግቦች በጊዜ ገደባቸው ለማሳካት ይረዳል።",
+      "required_concepts": [
+        "ቅድሚያ ለይቶ መስራት",
+        "ጭንቀት መቀነስ",
+        "ምርታማነት ማሳደግ / ግቦችን በጊዜ ማሳካት"
+      ],
+      "accepted_keywords": [
+        "ቅድሚያ",
+        "አስፈላጊ",
+        "አስቸኳይ",
+        "ጭንቀት",
+        "ምርታማነት",
+        "ጊዜ ገደብ",
+        "ስኬት"
+      ],
+      "min_concepts": 1,
+      "grading_mode": "AUTO",
+      "points": 1,
+      "admin_notes": "Authoritative rubric for Q75: Time Management ለማኔጀር ስኬት ያለው አስተዋጽኦ"
+    },
+    {
+      "question_number": 76,
+      "official_answer": "የአገልግሎትና የይዘት ጥራትን ለማሻሻል፣ የደንበኞችን ፍላጎት መሰረት ያደረጉ አዳዲስ ምርቶችን/አገልግሎቶችን ለማቅረብ እና ድክመቶችን በፍጥነት ለማስተካከል ይረዳል።",
+      "model_answer": "የአገልግሎትና የይዘት ጥራትን ለማሻሻል፣ የደንበኞችን ፍላጎት መሰረት ያደረጉ አዳዲስ ምርቶችን/አገልግሎቶችን ለማቅረብ እና ድክመቶችን በፍጥነት ለማስተካከል ይረዳል።",
+      "required_concepts": [
+        "የይዘት/አገልግሎት ጥራት ማሻሻል",
+        "የደንበኞችን ፍላጎት መረዳት",
+        "ድክመቶችን ማረም"
+      ],
+      "accepted_keywords": [
+        "ጥራት",
+        "ማሻሻል",
+        "ፍላጎት",
+        "ድክመት",
+        "ማስተካከል",
+        "አስተያየት",
+        "ደንበኛ"
+      ],
+      "min_concepts": 1,
+      "grading_mode": "AUTO",
+      "points": 1,
+      "admin_notes": "Authoritative rubric for Q76: የደንበኞች አስተያየት (Customer Feedback) ጥቅም"
+    },
+    {
+      "question_number": 77,
+      "official_answer": "Democratic (ዲሞክራሲያዊ)፦ የቡድን አባላትን በውሳኔ አሰጣጥ ላይ ያሳትፋል፣ ሀሳብ ይቀበላል።\nAutocratic (አምባገነናዊ/አስገዳጅ)፦ ማኔጀሩ ብቻውን ይወስናል፣ ያለ ቅሬታ ትእዛዝ እንዲፈጸም ብቻ ይፈልጋል።",
+      "model_answer": "Democratic (ዲሞክራሲያዊ)፦ የቡድን አባላትን በውሳኔ አሰጣጥ ላይ ያሳትፋል፣ ሀሳብ ይቀበላል።\nAutocratic (አምባገነናዊ/አስገዳጅ)፦ ማኔጀሩ ብቻውን ይወስናል፣ ያለ ቅሬታ ትእዛዝ እንዲፈጸም ብቻ ይፈልጋል።",
+      "required_concepts": [
+        "Democratic: ቡድንን ማሳተፍ/ሀሳብ መቀበል",
+        "Autocratic: ብቻውን መወሰን/ትእዛዝ መስጠት"
+      ],
+      "accepted_keywords": [
+        "democratic",
+        "autocratic",
+        "ዲሞክራሲያዊ",
+        "አምባገነን",
+        "ማሳተፍ",
+        "ብቻውን",
+        "ውሳኔ",
+        "ትእዛዝ"
+      ],
+      "min_concepts": 1,
+      "grading_mode": "AUTO",
+      "points": 1,
+      "admin_notes": "Authoritative rubric for Q77: Democratic vs Autocratic አመራር ዘይቤዎች"
+    },
+    {
+      "question_number": 78,
+      "official_answer": "የስራ ጫናን በትክክል ማከፋፈል፣ ምክንያታዊ የሆኑ የጊዜ ገደቦችን ማስቀመጥ፣ ሰራተኞች የእረፍት ጊዜያቸውን እንዲጠቀሙ ማበረታታት እና አዎንታዊ የስራ ከባቢ መፍጠር።",
+      "model_answer": "የስራ ጫናን በትክክል ማከፋፈል፣ ምክንያታዊ የሆኑ የጊዜ ገደቦችን ማስቀመጥ፣ ሰራተኞች የእረፍት ጊዜያቸውን እንዲጠቀሙ ማበረታታት እና አዎንታዊ የስራ ከባቢ መፍጠር።",
+      "required_concepts": [
+        "የስራ ጫና ማከፋፈል",
+        "ምክንያታዊ የጊዜ ገደብ",
+        "እረፍት ማበረታታት",
+        "አዎንታዊ ከባቢ"
+      ],
+      "accepted_keywords": [
+        "ጫና",
+        "ማከፋፈል",
+        "እረፍት",
+        "ጊዜ ገደብ",
+        "አካባቢ",
+        "ድካም",
+        "burnout"
+      ],
+      "min_concepts": 1,
+      "grading_mode": "AUTO",
+      "points": 1,
+      "admin_notes": "Authoritative rubric for Q78: የስራ ድካምን (Burnout) ለመከላከል የሚወሰዱ እርምጃዎች"
+    },
+    {
+      "question_number": 79,
+      "official_answer": "1. የካምፔኑን ዋና ዓላማ እና ግብ (Goal & Objectives) ማስቀመጥ።\n2. ኢላማ ደንበኛን (Target Audience) በጥንቃቄ መለየት።\n3. የሚተላለፈውን ይዘት/መልእክት፣ የበጀት መጠን እና የጊዜ ሰሌዳ (Timeline) ማዘጋጀት።",
+      "model_answer": "1. የካምፔኑን ዋና ዓላማ እና ግብ (Goal & Objectives) ማስቀመጥ።\n2. ኢላማ ደንበኛን (Target Audience) በጥንቃቄ መለየት።\n3. የሚተላለፈውን ይዘት/መልእክት፣ የበጀት መጠን እና የጊዜ ሰሌዳ (Timeline) ማዘጋጀት።",
+      "required_concepts": [
+        "ግብ እና ዓላማ ማስቀመጥ",
+        "ኢላማ ደንበኛን (Target Audience) መለየት",
+        "ይዘት፣ በጀት እና የጊዜ ሰሌዳ"
+      ],
+      "accepted_keywords": [
+        "ዓላማ",
+        "ግብ",
+        "ኢላማ",
+        "target",
+        "audience",
+        "ይዘት",
+        "በጀት",
+        "ጊዜ ሰሌዳ",
+        "timeline"
+      ],
+      "min_concepts": 1,
+      "grading_mode": "AUTO",
+      "points": 1,
+      "admin_notes": "Authoritative rubric for Q79: አዲስ የሶሻል ሚዲያ ካምፔን ለማቀድ 3 ነገሮች"
+    },
+    {
+      "question_number": 80,
+      "official_answer": "1. መገምገምና ማወቅ (ከ1-30 ቀን)፦ የቡድኑን ጥንካሬና ድክመት፣ የድርጅቱን አሰራር እና አሁን ያሉትን ሂደቶች ማጠናናት።\n2. እቅድ ማዘጋጀትና ግብ ማስቀመጥ (ከ31-60 ቀን)፦ ከቡድኑ ጋር በመወያየት ግልጽ የሆኑ አጫጭርና የረጅም ጊዜ ግቦችን መቅረጽ።\n3. ተግባራዊ ማድረግና መገምገም (ከ61-90 ቀን)፦ የታቀዱትን ለውጦች መተግበር መጀመር እና የመጀመሪያ ደረጃ ውጤቶችን መከታተልና ማስተካከል ።",
+      "model_answer": "1. መገምገምና ማወቅ (ከ1-30 ቀን)፦ የቡድኑን ጥንካሬና ድክመት፣ የድርጅቱን አሰራር እና አሁን ያሉትን ሂደቶች ማጠናናት።\n2. እቅድ ማዘጋጀትና ግብ ማስቀመጥ (ከ31-60 ቀን)፦ ከቡድኑ ጋር በመወያየት ግልጽ የሆኑ አጫጭርና የረጅም ጊዜ ግቦችን መቅረጽ።\n3. ተግባራዊ ማድረግና መገምገም (ከ61-90 ቀን)፦ የታቀዱትን ለውጦች መተግበር መጀመር እና የመጀመሪያ ደረጃ ውጤቶችን መከታተልና ማስተካከል ።",
+      "required_concepts": [
+        "1-30 ቀን: መገምገም / ማወቅ",
+        "31-60 ቀን: እቅድ ማዘጋጀት / ግብ ማስቀመጥ",
+        "61-90 ቀን: ተግባራዊ ማድረግ / መገምገም"
+      ],
+      "accepted_keywords": [
+        "መገምገም",
+        "ማወቅ",
+        "እቅድ",
+        "ግብ",
+        "ተግባራዊ",
+        "መከታተል",
+        "30",
+        "60",
+        "90"
+      ],
+      "min_concepts": 1,
+      "grading_mode": "AUTO",
+      "points": 1,
+      "admin_notes": "Authoritative rubric for Q80: በመጀመሪያዎቹ 90 ቀናት የሚከናወኑ 3 ዋና ዋና ነገሮች"
+    }
+  ]
+}

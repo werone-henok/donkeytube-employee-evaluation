@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# SQLite databases & runtime locks
+data/*.db
+data/*.db-wal
+data/*.db-shm
+data/*.db-journal
+
+# Uploads
+uploads/*
+!uploads/.gitkeep
+
+# Environment variables & secrets
+.env
+.env.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# System & IDE files
+.DS_Store
+Thumbs.db
+.snapshots/

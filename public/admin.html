@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>የአስተዳዳሪ ማዕከል | ዶንኪ ቲዩብ የአመራር ብቃት መመዘኛ</title>
+  <meta name="description" content="ዶንኪ ቲዩብ የአስተዳዳሪ ፖርታል - የጥያቄዎች ማስገቢያ፣ የውጤት መቆጣጠሪያና ምዘና ማዕከል">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f59e0b'><path d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z'/></svg>">
+</head>
+<body>
+
+  <!-- Admin Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-section">
+        <div class="brand-logo" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+          </svg>
+        </div>
+        <div class="brand-titles">
+          <span class="brand-name">DONKEY TUBE</span>
+          <span class="brand-subtitle">የአስተዳዳሪ ማዕከል (Administrator Console)</span>
+        </div>
+      </div>
+
+      <!-- Admin Navigation Tabs (Only visible when logged in) -->
+      <nav class="nav-tabs" id="admin-nav-bar" style="display: none;">
+        <button type="button" class="nav-tab-btn active" data-target="#admin-dashboard">
+          📊 አጠቃላይ (Overview)
+        </button>
+        <button type="button" class="nav-tab-btn" data-target="#admin-attempts">
+          👥 ተፈታኞች (Submissions)
+        </button>
+        <button type="button" class="nav-tab-btn" data-target="#admin-import">
+          📥 ፈተና አካትት (Import PDF/DOCX)
+        </button>
+        <button type="button" class="nav-tab-btn" data-target="#admin-versions">
+          🔒 ስሪቶች (Versions)
+        </button>
+        <button type="button" class="nav-tab-btn" data-target="#admin-settings">
+          ⚙️ ቅንብሮች (Settings)
+        </button>
+      </nav>
+
+      <!-- Admin User & Logout -->
+      <div id="admin-user-controls" style="display: none; align-items: center; gap: 0.75rem;">
+        <span style="font-size: 0.85rem; color: var(--text-secondary);">
+          👤 <strong id="admin-username-display" style="color: #fff;">admin</strong>
+        </span>
+        <button type="button" class="nav-tab-btn" style="background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); padding: 4px 12px;" onclick="adminLogout()">
+          ውጣ (Logout)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="app-main">
+
+    <!-- LOGIN SCREEN -->
+    <section id="view-admin-login" class="view-section active-view">
+      <div class="welcome-hero" style="max-width: 480px; margin: 4rem auto;">
+        <div class="brand-logo" style="width: 56px; height: 56px; margin: 0 auto 1.25rem auto; background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
+          <svg viewBox="0 0 24 24" style="width: 32px; height: 32px;">
+            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+          </svg>
+        </div>
+        <h1 class="hero-title" style="font-size: 1.75rem;">የአስተዳዳሪ መግቢያ</h1>
+        <p class="hero-description" style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+          የዶንኪ ቲዩብ ፈተናዎችን፣ ጥያቄዎችንና ውጤቶችን ለመቆጣጠር እባክዎ ይግቡ።
+        </p>
+
+        <div class="glass-panel" style="text-align: left; padding: 2rem;">
+          <form id="admin-login-form">
+            <div class="form-group">
+              <label class="form-label" for="login-username">የአስተዳዳሪ ስም (Username)</label>
+              <input type="text" id="login-username" class="form-input" value="admin" required autofocus>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="login-password">የይለፍ ቃል (Password)</label>
+              <input type="password" id="login-password" class="form-input" value="donkeytube2026" required>
+            </div>
+            <div id="login-error-msg" style="display: none; color: #f87171; font-size: 0.85rem; margin-bottom: 1rem;"></div>
+            <button type="submit" class="btn-primary">
+              🔒 ወደ አስተዳዳሪ ማዕከል ግባ (Sign In)
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADMIN VIEW 1: Overview Dashboard -->
+    <section id="view-admin-dashboard" class="view-section">
+      <div class="admin-section-header">
+        <div>
+          <h2 class="admin-title">የአመራር ምዘና አጠቃላይ ገጽታ (Dashboard)</h2>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">
+            የተፈታኞች ስታቲስቲክስ፣ የውጤት መቶኛ እና የስራ ክፍሎች አፈፃፀም
+          </p>
+        </div>
+      </div>
+
+      <div class="stats-grid-preview" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 2rem;">
+        <div class="stat-preview-card">
+          <span class="stat-num" id="metric-total-candidates">0</span>
+          <span class="stat-label">ጠቅላላ ተፈታኞች</span>
+        </div>
+        <div class="stat-preview-card">
+          <span class="stat-num" id="metric-pass-count" style="color: #10b981;">0</span>
+          <span class="stat-label">ያለፉ (Passed >= 70%)</span>
+        </div>
+        <div class="stat-preview-card">
+          <span class="stat-num" id="metric-average-score" style="color: #06b6d4;">0%</span>
+          <span class="stat-label">አማካይ ውጤት (Average)</span>
+        </div>
+        <div class="stat-preview-card">
+          <span class="stat-num" id="metric-active-version" style="color: #fbbf24; font-size: 1.25rem; font-family: monospace;">v1.0.0</span>
+          <span class="stat-label">ንቁ የፈተና ስሪት (Published)</span>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem;">
+        <div class="glass-panel">
+          <h3 style="font-size: 1.15rem; margin-bottom: 1rem; font-family: var(--font-am);">የቅርብ ጊዜ ፈተናዎች</h3>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>ተፈታኝ</th>
+                  <th>የስራ ክፍል</th>
+                  <th>ውጤት</th>
+                  <th>ሁኔታ</th>
+                </tr>
+              </thead>
+              <tbody id="dashboard-recent-attempts-body">
+                <tr><td colspan="4" style="text-align: center; padding: 1.5rem; color: var(--text-muted);">ምንም ተፈታኝ የለም</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="glass-panel">
+          <h3 style="font-size: 1.15rem; margin-bottom: 1rem; font-family: var(--font-am);">ፈጣን አቋራጮች</h3>
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <a href="#admin-import" class="btn-primary" style="font-size: 0.95rem; padding: 0.75rem 1rem; text-decoration: none;">
+              📥 አዲስ PDF/DOCX ፈተና አካትት
+            </a>
+            <a href="#admin-attempts" class="nav-tab-btn" style="background: rgba(255,255,255,0.06); padding: 0.75rem 1rem; text-decoration: none; justify-content: center;">
+              👥 ሁሉንም ተፈታኞች ገምግም
+            </a>
+            <a href="#admin-settings" class="nav-tab-btn" style="background: rgba(255,255,255,0.06); padding: 0.75rem 1rem; text-decoration: none; justify-content: center;">
+              ⚙️ የስርዓት ቅንብሮች
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADMIN VIEW 2: Candidate Attempts & Grading Queue -->
+    <section id="view-admin-attempts" class="view-section">
+      <div class="admin-section-header">
+        <div>
+          <h2 class="admin-title">የተፈታኞች ውጤትና ምዘና ዝርዝር</h2>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">
+            የተፈተኑ ሰራተኞች ዝርዝር፣ ውጤት፣ እና የማረሚያ ማስታወሻዎች
+          </p>
+        </div>
+        <div>
+          <input type="text" id="admin-search-input" class="form-input" placeholder="በስም ወይም በመለያ ፈልግ..." style="width: 250px; padding: 0.5rem 1rem;">
+        </div>
+      </div>
+
+      <div class="glass-panel">
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>የተፈታኝ ስም</th>
+                <th>የስራ ክፍል</th>
+                <th>የተፈተነበት ቀንና ሰዓት</th>
+                <th>ጠቅላላ ውጤት</th>
+                <th>መቶኛ</th>
+                <th>ሁኔታ (Status)</th>
+                <th>ተግባር (Action)</th>
+              </tr>
+            </thead>
+            <tbody id="admin-attempts-list-body">
+              <tr>
+                <td colspan="7" style="text-align: center; color: var(--text-muted); padding: 2rem;">
+                  በመጫን ላይ...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADMIN VIEW 3: Import Wizard -->
+    <section id="view-admin-import" class="view-section">
+      <div class="admin-section-header">
+        <div>
+          <h2 class="admin-title">Evaluation → Import Questions & Answers</h2>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">
+            ይፋዊውን የጥያቄዎች PDF እና የመልስ DOCX ፋይል በማካተት 10-ደረጃ የማረጋገጫ ምርመራ ያካሂዱ።
+          </p>
+        </div>
+      </div>
+
+      <!-- File Dropzones -->
+      <div class="dropzone-container">
+        <!-- PDF Question Dropzone -->
+        <div class="file-dropzone" id="dropzone-pdf">
+          <input type="file" id="pdf-file-input" accept=".pdf" style="display: none;">
+          <div class="dropzone-icon">📄</div>
+          <div class="dropzone-text">1. የጥያቄዎች ሰነድ (PDF Upload)</div>
+          <div class="dropzone-sub">Management_Promotion_Exam_80_Questions.pdf</div>
+          <div class="file-status-indicator" id="pdf-file-indicator">✓ ተመርጧል</div>
+        </div>
+
+        <!-- DOCX Answer Dropzone -->
+        <div class="file-dropzone" id="dropzone-docx">
+          <input type="file" id="docx-file-input" accept=".docx" style="display: none;">
+          <div class="dropzone-icon">📑</div>
+          <div class="dropzone-text">2. የመልሶች ሰነድ (DOCX Upload)</div>
+          <div class="dropzone-sub">Answers.docx (80 Authoritative Answers)</div>
+          <div class="file-status-indicator" id="docx-file-indicator">✓ ተመርጧል</div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <button type="button" id="btn-run-extract" class="btn-primary" style="max-width: 440px; margin: 0 auto;">
+          ⚡ ጥያቄዎችንና መልሶችን ፈትሽ (Run Extraction & Validation)
+        </button>
+      </div>
+
+      <!-- Validation Report Container -->
+      <div id="import-validation-report-box">
+        <!-- Populated dynamically -->
+      </div>
+    </section>
+
+    <!-- ADMIN VIEW 4: Versions -->
+    <section id="view-admin-versions" class="view-section">
+      <div class="admin-section-header">
+        <div>
+          <h2 class="admin-title">የፈተና ስሪቶች መዝገብ (Evaluation Versions)</h2>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">
+            የተቆለፉና የታተሙ የፈተና ስሪቶች ታሪክ (Version History & Cryptographic Checksums)
+          </p>
+        </div>
+      </div>
+
+      <div class="glass-panel">
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>የስሪት ኮድ (Version)</th>
+                <th>የርዕስ ማብራሪያ</th>
+                <th>የጥያቄ ብዛትና ነጥብ</th>
+                <th>ተፈታኞች</th>
+                <th>ሁኔታ (State)</th>
+                <th>መቆለፊያ (Lock)</th>
+              </tr>
+            </thead>
+            <tbody id="admin-versions-list-body">
+              <tr><td colspan="6" style="text-align: center; padding: 2rem;">በመጫን ላይ...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADMIN VIEW 5: Settings -->
+    <section id="view-admin-settings" class="view-section">
+      <div class="admin-section-header">
+        <div>
+          <h2 class="admin-title">የስርዓት ቅንብሮች (System Settings)</h2>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">
+            የውጤት አሰጣጥ እይታ እና የማለፊያ መስፈርቶች ማስተካከያ
+          </p>
+        </div>
+      </div>
+
+      <div class="glass-panel" style="max-width: 650px;">
+        <div class="form-group">
+          <label class="form-label">የውጤት እይታ ፈቃድ (Result Visibility)</label>
+          <select id="setting-visibility-select" class="form-select">
+            <option value="IMMEDIATE">ወዲያውኑ አሳይ (Immediate Result Certificate)</option>
+            <option value="MANUAL_RELEASE">በአስተዳዳሪ ሲፈቀድ ብቻ (Manual Release After Admin Review)</option>
+          </select>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.35rem;">
+            ወዲያውኑ አሳይ ሲመረጥ ሰራተኛው ልክ እንዳስገባ ውጤቱን፣ የክፍሎችን ክፍፍልና ማለፍ አለማለፉን ወዲያውኑ ይመለከታል።
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">የማለፊያ መቶኛ (Passing Threshold %)</label>
+          <input type="number" id="setting-threshold-input" class="form-input" value="70" min="50" max="100">
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.35rem;">
+            ነባሪው የማለፊያ ነጥብ 70% (70 ነጥብ) ነው።
+          </p>
+        </div>
+
+        <button type="button" class="btn-primary" style="margin-top: 1rem;" onclick="saveAdminSettings()">
+          💾 ቅንብሩን መዝግብ (Save Settings)
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Admin Candidate Detail Modal -->
+  <div id="admin-detail-modal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 850px;">
+      <button type="button" class="modal-close-btn" onclick="closeAdminDetailModal()">✕</button>
+      <div id="admin-detail-modal-body">
+        <!-- Dynamic content -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
