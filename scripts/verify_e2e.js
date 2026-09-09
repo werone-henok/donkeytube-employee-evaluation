@@ -1,23 +1,32 @@
 const http = require('http');
-const app = require('../server/index');
+const { app } = require('../server/index');
+const { initDb } = require('../server/db');
 
 const PORT = 3457;
 let adminToken = '';
 
-const server = app.listen(PORT, async () => {
-  console.log(`E2E Verification running on port ${PORT}...`);
-  try {
-    await runE2ETests();
-    console.log('\n======================================================');
-    console.log('ALL TESTS PASSED: EMPLOYEE & ADMIN SPACES ARE FULLY ISOLATED!');
-    console.log('======================================================\n');
-    process.exit(0);
-  } catch (err) {
-    console.error('\nE2E TEST FAILURE:', err);
-    process.exit(1);
-  } finally {
-    server.close();
-  }
+async function main() {
+  await initDb();
+  const server = app.listen(PORT, async () => {
+    console.log(`E2E Verification running on port ${PORT}...`);
+    try {
+      await runE2ETests();
+      console.log('\n======================================================');
+      console.log('ALL TESTS PASSED: EMPLOYEE & ADMIN SPACES ARE FULLY ISOLATED!');
+      console.log('======================================================\n');
+      process.exit(0);
+    } catch (err) {
+      console.error('\nE2E TEST FAILURE:', err);
+      process.exit(1);
+    } finally {
+      server.close();
+    }
+  });
+}
+
+main().catch(err => {
+  console.error('Fatal initialization error:', err);
+  process.exit(1);
 });
 
 function req(path, method = 'GET', body = null, token = null) {

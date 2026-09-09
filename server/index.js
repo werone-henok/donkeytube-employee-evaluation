@@ -1,16 +1,13 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const { initSchema, seedFromOfficialFile } = require('./db');
+const { initDb } = require('./db');
 const evaluationRoutes = require('./routes/evaluation');
 const adminRoutes = require('./routes/admin');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-
-// Initialize DB and ensure official evaluation is seeded
-initSchema();
-seedFromOfficialFile();
 
 // Middleware
 app.use(cors());
@@ -41,17 +38,30 @@ app.use((req, res) => {
   res.sendFile('index.html', { root: PUBLIC_DIR });
 });
 
-// Start Server
-if (require.main === module) {
-  app.listen(PORT, () => {
-    console.log(`=======================================================`);
-    console.log(`DonkeyTube Employee Evaluation System is running!`);
-    console.log(`Server URL: http://localhost:${PORT}`);
-    console.log(`Candidate Portal: http://localhost:${PORT}/#candidate`);
-    console.log(`Admin Portal:     http://localhost:${PORT}/#admin`);
-    console.log(`Import Wizard:    http://localhost:${PORT}/#admin-import`);
-    console.log(`=======================================================`);
-  });
+async function startServer() {
+  try {
+    // Connect & initialize MySQL database
+    await initDb();
+
+    if (require.main === module) {
+      app.listen(PORT, () => {
+        console.log(`=======================================================`);
+        console.log(`DonkeyTube Employee Evaluation System (MySQL) is running!`);
+        console.log(`Server URL: http://localhost:${PORT}`);
+        console.log(`Candidate Portal: http://localhost:${PORT}/#candidate`);
+        console.log(`Admin Portal:     http://localhost:${PORT}/#admin`);
+        console.log(`Import Wizard:    http://localhost:${PORT}/#admin-import`);
+        console.log(`=======================================================`);
+      });
+    }
+  } catch (err) {
+    console.error('Fatal: Could not initialize database and start server:', err);
+    process.exit(1);
+  }
 }
 
-module.exports = app;
+if (require.main === module) {
+  startServer();
+}
+
+module.exports = { app, startServer };

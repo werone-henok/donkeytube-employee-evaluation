@@ -9,27 +9,37 @@ const { gradeCompleteEvaluation } = require('../grading_engine');
  * Returns the currently published evaluation with 80 questions.
  * SECURITY: Absolutely NO correct answers, accepted variants, or rubrics are returned.
  */
-router.get('/active', (req, res) => {
+router.get('/active', async (req, res) => {
   try {
-    const version = db.prepare('SELECT * FROM evaluation_versions WHERE is_published = 1 ORDER BY imported_at DESC LIMIT 1').get();
+    const version = await db.get(
+      'SELECT * FROM evaluation_versions WHERE is_published = 1 ORDER BY imported_at DESC LIMIT 1'
+    );
     if (!version) {
       return res.status(404).json({ error: 'No published evaluation found' });
     }
 
-    const questions = db.prepare(`
+    const questions = await db.query(`
       SELECT id, evaluation_id, question_number, section_number, section_title,
              question_type, question_text, points, display_order
       FROM questions
       WHERE evaluation_id = ?
       ORDER BY question_number ASC
-    `).all(version.id);
+    `, [version.id]);
 
-    const getChoices = db.prepare(`
-      SELECT choice_key as key, choice_text as text
-      FROM question_choices
-      WHERE question_id = ?
-      ORDER BY display_order ASC
-    `);
+    // Fetch all choices for this evaluation in one efficient query
+    const choices = await db.query(`
+      SELECT qc.question_id, qc.choice_key as \`key\`, qc.choice_text as \`text\`
+      FROM question_choices qc
+      JOIN questions q ON qc.question_id = q.id
+      WHERE q.evaluation_id = ?
+      ORDER BY qc.display_order ASC
+    `, [version.id]);
+
+    const choicesByQuestion = {};
+    for (const c of choices) {
+      if (!choicesByQuestion[c.question_id]) choicesByQuestion[c.question_id] = [];
+      choicesByQuestion[c.question_id].push({ key: c.key, text: c.text });
+    }
 
     const sanitizedQuestions = questions.map(q => {
       const qObj = {
@@ -39,16 +49,16 @@ router.get('/active', (req, res) => {
         section_title: q.section_title,
         question_type: q.question_type,
         question_text: q.question_text,
-        points: q.points
+        points: Number(q.points)
       };
 
       if (q.question_type === 'MULTIPLE_CHOICE') {
-        qObj.choices = getChoices.all(q.id);
+        qObj.choices = choicesByQuestion[q.id] || [];
       }
       return qObj;
     });
 
-    const settingsRow = db.prepare("SELECT value FROM settings WHERE key = 'result_visibility'").get();
+    const settingsRow = await db.get("SELECT `value` FROM settings WHERE `key` = 'result_visibility'");
     const resultVisibility = settingsRow ? settingsRow.value : 'IMMEDIATE';
 
     res.json({
@@ -61,7 +71,7 @@ router.get('/active', (req, res) => {
         time_limit_minutes: version.time_limit_minutes,
         total_questions: version.total_questions,
         total_points: version.total_points,
-        passing_percentage: version.passing_percentage,
+        passing_percentage: Number(version.passing_percentage),
         result_visibility: resultVisibility
       },
       questions: sanitizedQuestions
@@ -76,7 +86,7 @@ router.get('/active', (req, res) => {
  * POST /api/evaluation/start
  * Starts a new candidate evaluation attempt session.
  */
-router.post('/start', (req, res) => {
+router.post('/start', async (req, res) => {
   try {
     const { candidate_name, department, employee_id, evaluation_id } = req.body;
 
@@ -85,8 +95,8 @@ router.post('/start', (req, res) => {
     }
 
     const evalRow = evaluation_id
-      ? db.prepare('SELECT * FROM evaluation_versions WHERE id = ?').get(evaluation_id)
-      : db.prepare('SELECT * FROM evaluation_versions WHERE is_published = 1 ORDER BY imported_at DESC LIMIT 1').get();
+      ? await db.get('SELECT * FROM evaluation_versions WHERE id = ?', [evaluation_id])
+      : await db.get('SELECT * FROM evaluation_versions WHERE is_published = 1 ORDER BY imported_at DESC LIMIT 1');
 
     if (!evalRow) {
       return res.status(404).json({ error: 'Evaluation version not found' });
@@ -95,19 +105,19 @@ router.post('/start', (req, res) => {
     const attemptId = 'att-' + crypto.randomUUID();
     const startedAt = new Date().toISOString();
 
-    db.prepare(`
+    await db.execute(`
       INSERT INTO evaluation_attempts (
         id, evaluation_id, candidate_name, department, employee_id,
         status, started_at, answers_payload_json
       ) VALUES (?, ?, ?, ?, ?, 'IN_PROGRESS', ?, '{}')
-    `).run(
+    `, [
       attemptId,
       evalRow.id,
       candidate_name.trim(),
       (department || 'Social Media Business').trim(),
       (employee_id || '').trim(),
       startedAt
-    );
+    ]);
 
     res.json({
       attempt_id: attemptId,
@@ -127,7 +137,7 @@ router.post('/start', (req, res) => {
  * POST /api/evaluation/save-draft
  * Auto-saves candidate responses in real-time.
  */
-router.post('/save-draft', (req, res) => {
+router.post('/save-draft', async (req, res) => {
   try {
     const { attempt_id, answers, time_spent_seconds } = req.body;
 
@@ -135,7 +145,7 @@ router.post('/save-draft', (req, res) => {
       return res.status(400).json({ error: 'Attempt ID is required' });
     }
 
-    const attempt = db.prepare('SELECT * FROM evaluation_attempts WHERE id = ?').get(attempt_id);
+    const attempt = await db.get('SELECT * FROM evaluation_attempts WHERE id = ?', [attempt_id]);
     if (!attempt) {
       return res.status(404).json({ error: 'Attempt not found' });
     }
@@ -144,15 +154,15 @@ router.post('/save-draft', (req, res) => {
       return res.status(403).json({ error: 'Attempt is locked and cannot be modified' });
     }
 
-    db.prepare(`
+    await db.execute(`
       UPDATE evaluation_attempts
       SET answers_payload_json = ?, time_spent_seconds = ?
       WHERE id = ?
-    `).run(
+    `, [
       JSON.stringify(answers || {}),
       time_spent_seconds || attempt.time_spent_seconds,
       attempt_id
-    );
+    ]);
 
     res.json({ success: true, saved_at: new Date().toISOString() });
   } catch (err) {
@@ -165,7 +175,7 @@ router.post('/save-draft', (req, res) => {
  * POST /api/evaluation/submit
  * Locks attempt, prevents further edits, grades securely server-side.
  */
-router.post('/submit', (req, res) => {
+router.post('/submit', async (req, res) => {
   try {
     const { attempt_id, answers, time_spent_seconds } = req.body;
 
@@ -173,7 +183,7 @@ router.post('/submit', (req, res) => {
       return res.status(400).json({ error: 'Attempt ID is required' });
     }
 
-    const attempt = db.prepare('SELECT * FROM evaluation_attempts WHERE id = ?').get(attempt_id);
+    const attempt = await db.get('SELECT * FROM evaluation_attempts WHERE id = ?', [attempt_id]);
     if (!attempt) {
       return res.status(404).json({ error: 'Attempt not found' });
     }
@@ -187,9 +197,9 @@ router.post('/submit', (req, res) => {
 
     // 1. Fetch questions, answer keys, rubrics
     const evalId = attempt.evaluation_id;
-    const questions = db.prepare('SELECT * FROM questions WHERE evaluation_id = ? ORDER BY question_number ASC').all(evalId);
-    const answerKeys = db.prepare('SELECT * FROM answer_keys WHERE question_id IN (SELECT id FROM questions WHERE evaluation_id = ?)').all(evalId);
-    const rubrics = db.prepare('SELECT * FROM rubrics WHERE question_id IN (SELECT id FROM questions WHERE evaluation_id = ?)').all(evalId);
+    const questions = await db.query('SELECT * FROM questions WHERE evaluation_id = ? ORDER BY question_number ASC', [evalId]);
+    const answerKeys = await db.query('SELECT * FROM answer_keys WHERE question_id IN (SELECT id FROM questions WHERE evaluation_id = ?)', [evalId]);
+    const rubrics = await db.query('SELECT * FROM rubrics WHERE question_id IN (SELECT id FROM questions WHERE evaluation_id = ?)', [evalId]);
 
     const ansKeysMap = {};
     for (const ak of answerKeys) ansKeysMap[ak.question_number] = ak;
@@ -197,44 +207,34 @@ router.post('/submit', (req, res) => {
     const rubricsMap = {};
     for (const rb of rubrics) rubricsMap[rb.question_number] = rb;
 
-    const evalRow = db.prepare('SELECT * FROM evaluation_versions WHERE id = ?').get(evalId);
-    const passThreshold = evalRow ? evalRow.passing_percentage : 70.0;
+    const evalRow = await db.get('SELECT * FROM evaluation_versions WHERE id = ?', [evalId]);
+    const passThreshold = evalRow ? Number(evalRow.passing_percentage) : 70.0;
 
     // 2. Run secure server-side grading
     const gradeResult = gradeCompleteEvaluation(submittedAnswers, questions, ansKeysMap, rubricsMap, passThreshold);
 
     // 3. System visibility setting
-    const settingsRow = db.prepare("SELECT value FROM settings WHERE key = 'result_visibility'").get();
+    const settingsRow = await db.get("SELECT `value` FROM settings WHERE `key` = 'result_visibility'");
     const resultVisibility = settingsRow ? settingsRow.value : 'IMMEDIATE';
 
-    // 4. Record into DB in a transaction
-    const updateAttempt = db.prepare(`
-      UPDATE evaluation_attempts
-      SET status = 'LOCKED',
-          submitted_at = ?,
-          time_spent_seconds = ?,
-          sec1_score = ?,
-          sec2_score = ?,
-          sec3_score = ?,
-          sec4_score = ?,
-          total_score = ?,
-          percentage = ?,
-          passed = ?,
-          answers_payload_json = ?,
-          result_visibility = ?
-      WHERE id = ?
-    `);
-
-    const insertAttemptAnswer = db.prepare(`
-      INSERT INTO attempt_answers (
-        id, attempt_id, question_id, question_number, section_number,
-        submitted_answer, awarded_points, max_points, is_correct,
-        grading_details_json, manual_reviewed, reviewer_notes
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, '')
-    `);
-
-    const tx = db.transaction(() => {
-      updateAttempt.run(
+    // 4. Record into DB in a MySQL transaction
+    await db.transaction(async (conn) => {
+      await conn.query(`
+        UPDATE evaluation_attempts
+        SET status = 'LOCKED',
+            submitted_at = ?,
+            time_spent_seconds = ?,
+            sec1_score = ?,
+            sec2_score = ?,
+            sec3_score = ?,
+            sec4_score = ?,
+            total_score = ?,
+            percentage = ?,
+            passed = ?,
+            answers_payload_json = ?,
+            result_visibility = ?
+        WHERE id = ?
+      `, [
         submittedAt,
         time_spent_seconds || attempt.time_spent_seconds,
         gradeResult.sec1_score,
@@ -243,31 +243,35 @@ router.post('/submit', (req, res) => {
         gradeResult.sec4_score,
         gradeResult.total_score,
         gradeResult.percentage,
-        gradeResult.passed,
+        gradeResult.passed ? 1 : 0,
         JSON.stringify(submittedAnswers),
         resultVisibility,
         attempt_id
-      );
+      ]);
 
-      for (const item of gradeResult.item_results) {
-        insertAttemptAnswer.run(
-          `attans-${attempt_id}-${item.question_number}`,
+      for (const item of (gradeResult.item_results || [])) {
+        const itemAnsId = 'ans-' + crypto.randomUUID();
+        await conn.query(`
+          INSERT INTO attempt_answers (
+            id, attempt_id, question_id, question_number, section_number,
+            submitted_answer, awarded_points, max_points, is_correct,
+            grading_details_json, manual_reviewed, reviewer_notes
+          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, '')
+        `, [
+          itemAnsId,
           attempt_id,
           item.question_id,
           item.question_number,
           item.section_number,
-          String(item.submitted_answer || ''),
+          item.submitted_answer,
           item.awarded_points,
           item.max_points,
-          item.is_correct,
+          item.is_correct ? 1 : 0,
           JSON.stringify(item.grading_details)
-        );
+        ]);
       }
     });
 
-    tx();
-
-    // 5. Response formatting
     if (resultVisibility === 'IMMEDIATE') {
       res.json({
         success: true,
@@ -277,7 +281,6 @@ router.post('/submit', (req, res) => {
         candidate_name: attempt.candidate_name,
         department: attempt.department,
         submitted_at: submittedAt,
-        time_spent_seconds: time_spent_seconds || attempt.time_spent_seconds,
         summary: {
           sec1_score: gradeResult.sec1_score,
           sec1_max: 20,
@@ -290,8 +293,7 @@ router.post('/submit', (req, res) => {
           total_score: gradeResult.total_score,
           total_max: 100,
           percentage: gradeResult.percentage,
-          passed: gradeResult.passed === 1,
-          pass_threshold: passThreshold
+          passed: gradeResult.passed
         }
       });
     } else {
@@ -315,9 +317,9 @@ router.post('/submit', (req, res) => {
 /**
  * GET /api/evaluation/attempt/:id/result
  */
-router.get('/attempt/:id/result', (req, res) => {
+router.get('/attempt/:id/result', async (req, res) => {
   try {
-    const attempt = db.prepare('SELECT * FROM evaluation_attempts WHERE id = ?').get(req.params.id);
+    const attempt = await db.get('SELECT * FROM evaluation_attempts WHERE id = ?', [req.params.id]);
     if (!attempt) {
       return res.status(404).json({ error: 'Attempt not found' });
     }
@@ -326,7 +328,7 @@ router.get('/attempt/:id/result', (req, res) => {
       return res.status(400).json({ error: 'Evaluation is still in progress' });
     }
 
-    const settingsRow = db.prepare("SELECT value FROM settings WHERE key = 'result_visibility'").get();
+    const settingsRow = await db.get("SELECT `value` FROM settings WHERE `key` = 'result_visibility'");
     const resultVisibility = settingsRow ? settingsRow.value : 'IMMEDIATE';
 
     if (resultVisibility !== 'IMMEDIATE' && !req.query.admin) {
@@ -350,17 +352,17 @@ router.get('/attempt/:id/result', (req, res) => {
       time_spent_seconds: attempt.time_spent_seconds,
       result_visibility: resultVisibility,
       summary: {
-        sec1_score: attempt.sec1_score,
+        sec1_score: Number(attempt.sec1_score),
         sec1_max: 20,
-        sec2_score: attempt.sec2_score,
+        sec2_score: Number(attempt.sec2_score),
         sec2_max: 20,
-        sec3_score: attempt.sec3_score,
+        sec3_score: Number(attempt.sec3_score),
         sec3_max: 40,
-        sec4_score: attempt.sec4_score,
+        sec4_score: Number(attempt.sec4_score),
         sec4_max: 20,
-        total_score: attempt.total_score,
+        total_score: Number(attempt.total_score),
         total_max: 100,
-        percentage: attempt.percentage,
+        percentage: Number(attempt.percentage),
         passed: attempt.passed === 1
       }
     });

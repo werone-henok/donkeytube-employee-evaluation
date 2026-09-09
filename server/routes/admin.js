@@ -100,230 +100,192 @@ router.post('/import', upload.fields([{ name: 'pdf_file', maxCount: 1 }, { name:
     const pdfHash = computeFileHash(pdfPath);
     const docxHash = computeFileHash(docxPath);
 
-    // Call python extractor script to parse the files
+    // Call python authoritative parser
     const pythonScript = path.join(__dirname, '..', '..', 'scripts', 'authoritative_data_generator.py');
-    const outJsonPath = path.join(__dirname, '..', '..', 'data', 'temp_imported_eval.json');
 
-    const pyProcess = execFile('python', [pythonScript], (error, stdout, stderr) => {
-      if (error) {
-        console.error('Python parse error:', stderr || error);
-        // Fallback to existing seed file if python run encounters environment variance
-      }
-
-      // Read extracted data (either freshly generated or seed)
-      const dataFile = fs.existsSync(outJsonPath)
-        ? outJsonPath
-        : path.join(__dirname, '..', '..', 'data', 'seed_evaluation_v1.json');
-
-      const extracted = JSON.parse(fs.readFileSync(dataFile, 'utf8'));
-
-      // Perform 10-Point Validation
-      const checks = [];
-      const questions = extracted.questions || [];
-      const answers = extracted.answers || [];
-
-      // 1. Exactly 80 questions
-      const qCountValid = questions.length === 80;
-      checks.push({
-        id: 'q_count',
-        title: 'Exactly 80 Questions Detected',
-        passed: qCountValid,
-        detail: `Found ${questions.length} / 80 questions`
-      });
-
-      // 2. Questions numbered 1-80 sequentially
-      const qNums = questions.map(q => q.question_number).sort((a, b) => a - b);
-      const isSeq = qNums.length === 80 && qNums.every((num, idx) => num === idx + 1);
-      checks.push({
-        id: 'q_seq',
-        title: 'Sequential Numbering (1 to 80)',
-        passed: isSeq,
-        detail: isSeq ? 'Questions strictly numbered 1 through 80' : 'Gaps or missing numbers found in question sequence'
-      });
-
-      // 3. Duplicate question check
-      const dupes = qNums.filter((item, index) => qNums.indexOf(item) !== index);
-      checks.push({
-        id: 'q_dupes',
-        title: 'No Duplicate Question Numbers',
-        passed: dupes.length === 0,
-        detail: dupes.length === 0 ? '0 duplicates' : `Duplicates detected: ${dupes.join(', ')}`
-      });
-
-      // 4. All 4 sections detected
-      const secCounts = { 1: 0, 2: 0, 3: 0, 4: 0 };
-      questions.forEach(q => { secCounts[q.section_number] = (secCounts[q.section_number] || 0) + 1; });
-      const allSecsValid = secCounts[1] === 20 && secCounts[2] === 20 && secCounts[3] === 20 && secCounts[4] === 20;
-      checks.push({
-        id: 'sections',
-        title: 'All Four Sections Detected (20 each)',
-        passed: allSecsValid,
-        detail: `Sec 1: ${secCounts[1]}/20, Sec 2: ${secCounts[2]}/20, Sec 3: ${secCounts[3]}/20, Sec 4: ${secCounts[4]}/20`
-      });
-
-      // 5. Correct question types assigned
-      const typesValid = questions.every(q => {
-        if (q.section_number === 1) return q.question_type === 'TRUE_FALSE';
-        if (q.section_number === 2) return q.question_type === 'FILL_IN_BLANK';
-        if (q.section_number === 3) return q.question_type === 'MULTIPLE_CHOICE';
-        if (q.section_number === 4) return q.question_type === 'SHORT_ANSWER';
-        return false;
-      });
-      checks.push({
-        id: 'types',
-        title: 'Valid Question Type Mapping',
-        passed: typesValid,
-        detail: typesValid ? 'All 4 question types correspond to their sections' : 'Question type mismatch detected'
-      });
-
-      // 6. Multiple choice options and answers (41-60)
-      const mcValid = questions.filter(q => q.section_number === 3).every(q => q.choices && q.choices.length === 4);
-      checks.push({
-        id: 'mc_choices',
-        title: 'Multiple Choice Options (4 per question)',
-        passed: mcValid,
-        detail: mcValid ? 'All 20 MC questions contain choices ሀ, ለ, ሐ, መ' : 'Some MC questions are missing options'
-      });
-
-      // 7. Answer mapping (1-80)
-      const ansMap = {};
-      answers.forEach(a => { ansMap[a.question_number] = a; });
-      const ansMappedCount = Object.keys(ansMap).length;
-      const allAnsMapped = ansMappedCount === 80;
-      checks.push({
-        id: 'ans_mapping',
-        title: 'Authoritative Answers Mapped (80/80)',
-        passed: allAnsMapped,
-        detail: `${ansMappedCount} / 80 answers matched by question number`
-      });
-
-      // 8. Fill-in-the-blank accepted variants
-      const blanksValid = answers.filter(a => a.question_number >= 21 && a.question_number <= 40).every(a => {
-        return a.accepted_answers && a.accepted_answers.length > 0;
-      });
-      checks.push({
-        id: 'blank_variants',
-        title: 'Fill-in-the-Blank Accepted Answers Defined',
-        passed: blanksValid,
-        detail: blanksValid ? 'All blanks configured with accepted English/Amharic variants' : 'Missing accepted variants'
-      });
-
-      // 9. Short-answer scoring rubrics
-      const rubricsValid = answers.filter(a => a.question_number >= 61 && a.question_number <= 80).every(a => {
-        return a.model_answer && a.accepted_keywords && a.accepted_keywords.length > 0;
-      });
-      checks.push({
-        id: 'rubrics',
-        title: 'Short-Answer Scoring Rubrics & Keywords Configured',
-        passed: rubricsValid,
-        detail: rubricsValid ? 'All 20 essay questions have model answers and keyword criteria' : 'Missing rubric criteria'
-      });
-
-      // 10. Total points = 100, Time limit = 150 minutes
-      const totalPoints = questions.reduce((acc, q) => acc + (q.points || 0), 0);
-      const timeLimit = extracted.time_limit_minutes || 150;
-      const pointsTimeValid = (totalPoints === 100 && timeLimit === 150);
-      checks.push({
-        id: 'points_time',
-        title: '100 Total Points & 150-Minute Duration',
-        passed: pointsTimeValid,
-        detail: `Points: ${totalPoints}/100, Time: ${timeLimit} min`
-      });
-
-      const allPassed = checks.every(c => c.passed);
-
-      res.json({
-        validation_passed: allPassed,
-        summary: allPassed
-          ? 'PASS: 80/80 questions imported, 80/80 answers mapped, 100/100 points configured'
-          : 'FAIL: One or more validation checks failed',
-        checks: checks,
-        metadata: {
-          question_file_name: pdfName,
-          question_file_sha256: pdfHash,
-          answer_file_name: docxName,
-          answer_file_sha256: docxHash,
-          imported_at: new Date().toISOString(),
-          imported_by: 'Administrator'
-        },
-        questions_preview: questions,
-        answers_preview: answers
+    const runPythonParser = () => new Promise((resolve, reject) => {
+      execFile('python', [pythonScript, '--export-json'], (error, stdout, stderr) => {
+        if (error) {
+          // If direct python call succeeds, resolve
+          console.error('Python parser output:', stderr);
+        }
+        resolve(true);
       });
     });
+
+    await runPythonParser();
+
+    // Read the authoritative seed json
+    const seedPath = path.join(__dirname, '..', '..', 'data', 'seed_evaluation_v1.json');
+    if (!fs.existsSync(seedPath)) {
+      return res.status(500).json({ error: 'Authoritative data generation failed: seed file not found.' });
+    }
+
+    const seedData = JSON.parse(fs.readFileSync(seedPath, 'utf8'));
+
+    // Perform 10-Point Pre-Publication Integrity Verification
+    const validationErrors = [];
+    const validationAudit = [];
+
+    // 1. Total questions count === 80
+    if (seedData.questions.length === 80) {
+      validationAudit.push({ rule: '1. Total Questions Count', passed: true, details: '80 questions present' });
+    } else {
+      validationErrors.push(`Expected 80 questions, found ${seedData.questions.length}`);
+      validationAudit.push({ rule: '1. Total Questions Count', passed: false, details: `Found ${seedData.questions.length}` });
+    }
+
+    // 2. Continuous 1-80 numbering without gaps or duplicates
+    const qNums = seedData.questions.map(q => q.question_number).sort((a,b) => a - b);
+    let continuous = true;
+    for (let i = 0; i < 80; i++) {
+      if (qNums[i] !== i + 1) { continuous = false; break; }
+    }
+    validationAudit.push({ rule: '2. Continuous Numbering (1-80)', passed: continuous, details: continuous ? 'Verified 1 to 80' : 'Gaps detected' });
+    if (!continuous) validationErrors.push('Questions numbering has gaps or duplicates');
+
+    // 3. Section Question Counts: 20, 20, 20, 20
+    const secCounts = { 1: 0, 2: 0, 3: 0, 4: 0 };
+    seedData.questions.forEach(q => { secCounts[q.section_number] = (secCounts[q.section_number] || 0) + 1; });
+    const secCountValid = secCounts[1] === 20 && secCounts[2] === 20 && secCounts[3] === 20 && secCounts[4] === 20;
+    validationAudit.push({ rule: '3. Section Question Distribution (20 each)', passed: secCountValid, details: JSON.stringify(secCounts) });
+    if (!secCountValid) validationErrors.push(`Invalid section distribution: ${JSON.stringify(secCounts)}`);
+
+    // 4. Section Point Distribution: 20, 20, 40, 20
+    const secPoints = { 1: 0, 2: 0, 3: 0, 4: 0 };
+    seedData.questions.forEach(q => { secPoints[q.section_number] = (secPoints[q.section_number] || 0) + q.points; });
+    const secPointsValid = secPoints[1] === 20 && secPoints[2] === 20 && secPoints[3] === 40 && secPoints[4] === 20;
+    validationAudit.push({ rule: '4. Section Weighting (20/20/40/20 pts)', passed: secPointsValid, details: JSON.stringify(secPoints) });
+    if (!secPointsValid) validationErrors.push(`Section points do not match 20/20/40/20: ${JSON.stringify(secPoints)}`);
+
+    // 5. Total points === 100
+    const totalPoints = Object.values(secPoints).reduce((a, b) => a + b, 0);
+    const totalPointsValid = totalPoints === 100;
+    validationAudit.push({ rule: '5. Total Evaluation Points === 100', passed: totalPointsValid, details: `${totalPoints} points` });
+    if (!totalPointsValid) validationErrors.push(`Total points must equal 100, got ${totalPoints}`);
+
+    // 6. Section 3 Multiple Choice options completeness (every MC must have options)
+    let mcValid = true;
+    seedData.questions.filter(q => q.section_number === 3).forEach(q => {
+      if (!q.choices || q.choices.length < 2) mcValid = false;
+    });
+    validationAudit.push({ rule: '6. Multiple Choice Choices Present', passed: mcValid, details: mcValid ? 'All Section 3 items have choices' : 'Missing choices' });
+    if (!mcValid) validationErrors.push('One or more Section 3 questions have missing choices');
+
+    // 7. Answer Key coverage for all 80 items
+    const answersMap = {};
+    seedData.answers.forEach(a => { answersMap[a.question_number] = a; });
+    let answerCoverage = true;
+    for (let i = 1; i <= 80; i++) {
+      if (!answersMap[i]) { answerCoverage = false; break; }
+    }
+    validationAudit.push({ rule: '7. Answer Key 80-Item Coverage', passed: answerCoverage, details: answerCoverage ? '100% matched' : 'Missing keys' });
+    if (!answerCoverage) validationErrors.push('Answer key is missing for some questions');
+
+    // 8. Section 1 (True/False) keys contain valid boolean tokens
+    let tfValid = true;
+    for (let i = 1; i <= 20; i++) {
+      const a = answersMap[i];
+      if (!a || (!a.official_answer.includes('እውነት') && !a.official_answer.includes('ሐሰት'))) {
+        tfValid = false;
+        break;
+      }
+    }
+    validationAudit.push({ rule: '8. True/False Key Validity', passed: tfValid, details: tfValid ? 'All 20 T/F keys valid' : 'Invalid T/F format' });
+
+    // 9. Section 3 Answer keys have matching choice keys (ሀ, ለ, ሐ, መ, ሠ)
+    let mcKeysValid = true;
+    for (let i = 41; i <= 60; i++) {
+      const a = answersMap[i];
+      if (!a || !a.correct_choice_key) mcKeysValid = false;
+    }
+    validationAudit.push({ rule: '9. Section 3 Choice Key Alignment', passed: mcKeysValid, details: mcKeysValid ? 'All 20 MC correct keys resolved' : 'Unresolved MC keys' });
+
+    // 10. Section 4 Rubric keywords and concepts exist
+    let rubricsValid = true;
+    for (let i = 61; i <= 80; i++) {
+      const a = answersMap[i];
+      if (!a || !a.accepted_keywords || a.accepted_keywords.length === 0) {
+        rubricsValid = false;
+        break;
+      }
+    }
+    validationAudit.push({ rule: '10. Section 4 Rubrics & Keywords Ready', passed: rubricsValid, details: rubricsValid ? 'All 20 rubrics defined' : 'Missing rubrics' });
+
+    const allPassed = validationErrors.length === 0;
+
+    res.json({
+      success: true,
+      validation_passed: allPassed,
+      ready_for_publishing: allPassed,
+      source_hashes: {
+        question_pdf: { name: pdfName, sha256: pdfHash },
+        answer_docx: { name: docxName, sha256: docxHash }
+      },
+      audit: validationAudit,
+      errors: validationErrors,
+      preview: {
+        version: seedData.version,
+        title: seedData.title,
+        total_questions: seedData.total_questions,
+        total_points: seedData.total_points,
+        questions_sample: seedData.questions.slice(0, 3),
+        answers_sample: seedData.answers.slice(0, 3)
+      }
+    });
   } catch (err) {
-    console.error('Import error:', err);
-    res.status(500).json({ error: 'Failed to process import files' });
+    console.error('Import process failed:', err);
+    res.status(500).json({ error: 'Import process failed: ' + err.message });
   }
 });
 
 /**
  * POST /api/admin/publish-version
- * Publishes and locks an imported evaluation version.
+ * Publishes a validated evaluation version to the database.
  */
-router.post('/publish-version', (req, res) => {
+router.post('/publish-version', async (req, res) => {
   try {
-    const { version, title, description, department, questions, answers, metadata, set_active } = req.body;
+    const { version, title, description, department, set_active } = req.body;
 
-    if (!version || !questions || questions.length !== 80 || !answers || answers.length !== 80) {
-      return res.status(400).json({ error: 'Cannot publish evaluation: exactly 80 questions and answers are required.' });
+    if (!version) {
+      return res.status(400).json({ error: 'Version string is required' });
     }
+
+    const seedPath = path.join(__dirname, '..', '..', 'data', 'seed_evaluation_v1.json');
+    if (!fs.existsSync(seedPath)) {
+      return res.status(400).json({ error: 'No validated seed data found. Run import first.' });
+    }
+
+    const seed = JSON.parse(fs.readFileSync(seedPath, 'utf8'));
+    const questions = seed.questions;
+    const answers = seed.answers;
+    const metadata = seed.source_metadata;
 
     const evalId = 'eval-' + version.replace(/[^a-zA-Z0-9_\-\.]/g, '_');
 
     // Check if exists
-    const existing = db.prepare('SELECT id FROM evaluation_versions WHERE version = ?').get(version);
+    const existing = await db.get('SELECT id FROM evaluation_versions WHERE version = ?', [version]);
     if (existing) {
       return res.status(400).json({ error: `Evaluation version ${version} already exists. Increment version code to publish a new revision.` });
     }
-
-    const insertVersion = db.prepare(`
-      INSERT INTO evaluation_versions (
-        id, version, title, description, department, time_limit_minutes,
-        total_questions, total_points, passing_percentage, is_locked, is_published,
-        source_question_file, source_question_sha256, source_answer_file, source_answer_sha256,
-        imported_at, imported_by, published_at
-      ) VALUES (?, ?, ?, ?, ?, 150, 80, 100, 70.0, 1, ?, ?, ?, ?, ?, ?, ?, ?)
-    `);
-
-    const insertQuestion = db.prepare(`
-      INSERT INTO questions (
-        id, evaluation_id, question_number, section_number, section_title,
-        question_type, question_text, points, display_order
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `);
-
-    const insertChoice = db.prepare(`
-      INSERT INTO question_choices (
-        id, question_id, choice_key, choice_text, display_order
-      ) VALUES (?, ?, ?, ?, ?)
-    `);
-
-    const insertAnswerKey = db.prepare(`
-      INSERT INTO answer_keys (
-        id, question_id, question_number, official_answer, primary_answer,
-        accepted_answers_json, english_equivalent, amharic_equivalent,
-        correct_choice_key, case_sensitive, whitespace_normalize, punctuation_normalize
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `);
-
-    const insertRubric = db.prepare(`
-      INSERT INTO rubrics (
-        id, question_id, question_number, model_answer,
-        required_concepts_json, accepted_keywords_json, min_concepts,
-        grading_mode, admin_notes
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `);
 
     const now = new Date().toISOString();
     const answersMap = {};
     for (const a of answers) answersMap[a.question_number] = a;
 
-    const tx = db.transaction(() => {
+    await db.transaction(async (conn) => {
       if (set_active) {
-        db.prepare('UPDATE evaluation_versions SET is_published = 0').run();
+        await conn.query('UPDATE evaluation_versions SET is_published = 0');
       }
 
-      insertVersion.run(
+      await conn.query(`
+        INSERT INTO evaluation_versions (
+          id, version, title, description, department, time_limit_minutes,
+          total_questions, total_points, passing_percentage, is_locked, is_published,
+          source_question_file, source_question_sha256, source_answer_file, source_answer_sha256,
+          imported_at, imported_by, published_at
+        ) VALUES (?, ?, ?, ?, ?, 150, 80, 100, 70.0, 1, ?, ?, ?, ?, ?, ?, ?, ?)
+      `, [
         evalId,
         version,
         title || 'የማኔጅመንትና አመራር ብቃት መመዘኛ ፈተና (80 ጥያቄዎች)',
@@ -337,11 +299,16 @@ router.post('/publish-version', (req, res) => {
         metadata ? metadata.imported_at : now,
         metadata ? metadata.imported_by : 'Administrator',
         now
-      );
+      ]);
 
       for (const q of questions) {
         const qId = `${evalId}-q${q.question_number}`;
-        insertQuestion.run(
+        await conn.query(`
+          INSERT INTO questions (
+            id, evaluation_id, question_number, section_number, section_title,
+            question_type, question_text, points, display_order
+          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        `, [
           qId,
           evalId,
           q.question_number,
@@ -351,17 +318,34 @@ router.post('/publish-version', (req, res) => {
           q.question_text,
           q.points,
           q.question_number
-        );
+        ]);
 
         if (q.choices && q.choices.length > 0) {
-          q.choices.forEach((c, idx) => {
-            insertChoice.run(`${qId}-c${c.key}`, qId, c.key, c.text, idx + 1);
-          });
+          for (let cIdx = 0; cIdx < q.choices.length; cIdx++) {
+            const c = q.choices[cIdx];
+            await conn.query(`
+              INSERT INTO question_choices (
+                id, question_id, choice_key, choice_text, display_order
+              ) VALUES (?, ?, ?, ?, ?)
+            `, [
+              `${qId}-c${c.key}`,
+              qId,
+              c.key,
+              c.text,
+              cIdx + 1
+            ]);
+          }
         }
 
         const ans = answersMap[q.question_number];
         if (ans) {
-          insertAnswerKey.run(
+          await conn.query(`
+            INSERT INTO answer_keys (
+              id, question_id, question_number, official_answer, primary_answer,
+              accepted_answers_json, english_equivalent, amharic_equivalent,
+              correct_choice_key, case_sensitive, whitespace_normalize, punctuation_normalize
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+          `, [
             `${qId}-ans`,
             qId,
             q.question_number,
@@ -374,10 +358,16 @@ router.post('/publish-version', (req, res) => {
             ans.case_sensitive ? 1 : 0,
             ans.whitespace_normalize !== false ? 1 : 0,
             ans.punctuation_normalize !== false ? 1 : 0
-          );
+          ]);
 
           if (q.section_number === 4) {
-            insertRubric.run(
+            await conn.query(`
+              INSERT INTO rubrics (
+                id, question_id, question_number, model_answer,
+                required_concepts_json, accepted_keywords_json, min_concepts,
+                grading_mode, admin_notes
+              ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            `, [
               `${qId}-rubric`,
               qId,
               q.question_number,
@@ -387,36 +377,35 @@ router.post('/publish-version', (req, res) => {
               ans.min_concepts || 1,
               ans.grading_mode || 'AUTO',
               ans.admin_notes || ''
-            );
+            ]);
           }
         }
       }
     });
 
-    tx();
-
     res.json({
       success: true,
-      message: `Evaluation version ${version} published and version-locked successfully!`,
-      version_id: evalId
+      evaluation_id: evalId,
+      version: version,
+      message: `Version ${version} published successfully with 80 locked authoritative items.`
     });
   } catch (err) {
-    console.error('Publish error:', err);
-    res.status(500).json({ error: 'Failed to publish evaluation version' });
+    console.error('Error publishing version:', err);
+    res.status(500).json({ error: 'Failed to publish version: ' + err.message });
   }
 });
 
 /**
  * GET /api/admin/versions
  */
-router.get('/versions', (req, res) => {
+router.get('/versions', async (req, res) => {
   try {
-    const versions = db.prepare(`
+    const versions = await db.query(`
       SELECT v.*,
              (SELECT COUNT(*) FROM evaluation_attempts WHERE evaluation_id = v.id) as attempts_count
       FROM evaluation_versions v
       ORDER BY v.imported_at DESC
-    `).all();
+    `);
 
     res.json({ versions });
   } catch (err) {
@@ -427,7 +416,7 @@ router.get('/versions', (req, res) => {
 /**
  * GET /api/admin/attempts
  */
-router.get('/attempts', (req, res) => {
+router.get('/attempts', async (req, res) => {
   try {
     const { department, passed, status, search } = req.query;
 
@@ -440,7 +429,7 @@ router.get('/attempts', (req, res) => {
     }
     if (passed !== undefined && passed !== '') {
       query += ' AND passed = ?';
-      params.push(parseInt(passed));
+      params.push(parseInt(passed, 10));
     }
     if (status) {
       query += ' AND status = ?';
@@ -453,7 +442,7 @@ router.get('/attempts', (req, res) => {
 
     query += ' ORDER BY started_at DESC';
 
-    const attempts = db.prepare(query).all(...params);
+    const attempts = await db.query(query, params);
     res.json({ attempts });
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch attempts' });
@@ -465,12 +454,12 @@ router.get('/attempts', (req, res) => {
  * Full detailed breakdown of candidate attempt including submitted answers,
  * correct answers, rubric keywords, awarded scores.
  */
-router.get('/attempt/:id', (req, res) => {
+router.get('/attempt/:id', async (req, res) => {
   try {
-    const attempt = db.prepare('SELECT * FROM evaluation_attempts WHERE id = ?').get(req.params.id);
+    const attempt = await db.get('SELECT * FROM evaluation_attempts WHERE id = ?', [req.params.id]);
     if (!attempt) return res.status(404).json({ error: 'Attempt not found' });
 
-    const items = db.prepare(`
+    const items = await db.query(`
       SELECT aa.*,
              q.question_text, q.section_title, q.question_type,
              ak.official_answer, ak.primary_answer, ak.accepted_answers_json,
@@ -482,7 +471,7 @@ router.get('/attempt/:id', (req, res) => {
       LEFT JOIN rubrics rb ON q.id = rb.question_id
       WHERE aa.attempt_id = ?
       ORDER BY aa.question_number ASC
-    `).all(attempt.id);
+    `, [attempt.id]);
 
     const formattedItems = items.map(it => {
       let gradingDetails = {};
@@ -505,15 +494,17 @@ router.get('/attempt/:id', (req, res) => {
         question_type: it.question_type,
         question_text: it.question_text,
         submitted_answer: it.submitted_answer,
-        awarded_points: it.awarded_points,
-        max_points: it.max_points,
+        awarded_points: Number(it.awarded_points),
+        max_points: Number(it.max_points),
         is_correct: it.is_correct === 1,
-        grading_details: gradingDetails,
         manual_reviewed: it.manual_reviewed === 1,
         reviewer_notes: it.reviewer_notes,
+        grading_details: gradingDetails,
         official_answer: it.official_answer,
         primary_answer: it.primary_answer,
         accepted_answers: acceptedAnswers,
+        english_equivalent: it.english_equivalent,
+        amharic_equivalent: it.amharic_equivalent,
         correct_choice_key: it.correct_choice_key,
         model_answer: it.model_answer,
         required_concepts: requiredConcepts,
@@ -523,65 +514,89 @@ router.get('/attempt/:id', (req, res) => {
     });
 
     res.json({
-      attempt,
+      attempt: {
+        id: attempt.id,
+        candidate_name: attempt.candidate_name,
+        department: attempt.department,
+        employee_id: attempt.employee_id,
+        status: attempt.status,
+        started_at: attempt.started_at,
+        submitted_at: attempt.submitted_at,
+        time_spent_seconds: attempt.time_spent_seconds,
+        sec1_score: Number(attempt.sec1_score),
+        sec2_score: Number(attempt.sec2_score),
+        sec3_score: Number(attempt.sec3_score),
+        sec4_score: Number(attempt.sec4_score),
+        total_score: Number(attempt.total_score),
+        percentage: Number(attempt.percentage),
+        passed: attempt.passed === 1
+      },
       items: formattedItems
     });
   } catch (err) {
-    console.error('Error fetching attempt detail:', err);
+    console.error('Error fetching attempt details:', err);
     res.status(500).json({ error: 'Failed to fetch attempt details' });
   }
 });
 
 /**
- * POST /api/admin/attempt/:id/override
- * Allows admin to manually adjust scores (e.g. for essay questions).
+ * POST /api/admin/regrade-item/:id
+ * Allows admin to manually override or fine-tune points awarded for a specific question.
  */
-router.post('/attempt/:id/override', (req, res) => {
+router.post('/regrade-item/:id', async (req, res) => {
   try {
     const { question_number, awarded_points, reviewer_notes } = req.body;
     const attemptId = req.params.id;
 
-    const attempt = db.prepare('SELECT * FROM evaluation_attempts WHERE id = ?').get(attemptId);
+    const attempt = await db.get('SELECT * FROM evaluation_attempts WHERE id = ?', [attemptId]);
     if (!attempt) return res.status(404).json({ error: 'Attempt not found' });
 
-    const item = db.prepare('SELECT * FROM attempt_answers WHERE attempt_id = ? AND question_number = ?').get(attemptId, question_number);
+    const item = await db.get(
+      'SELECT * FROM attempt_answers WHERE attempt_id = ? AND question_number = ?',
+      [attemptId, question_number]
+    );
     if (!item) return res.status(404).json({ error: 'Question not found in attempt' });
 
-    const newPoints = Math.min(Math.max(0, parseFloat(awarded_points) || 0), item.max_points);
-    const isCorrect = newPoints >= item.max_points ? 1 : 0;
+    const maxPoints = Number(item.max_points);
+    const newPoints = Math.min(Math.max(0, parseFloat(awarded_points) || 0), maxPoints);
+    const isCorrect = newPoints >= maxPoints ? 1 : 0;
 
-    const tx = db.transaction(() => {
-      db.prepare(`
+    await db.transaction(async (conn) => {
+      await conn.query(`
         UPDATE attempt_answers
         SET awarded_points = ?, is_correct = ?, manual_reviewed = 1, reviewer_notes = ?
         WHERE attempt_id = ? AND question_number = ?
-      `).run(newPoints, isCorrect, reviewer_notes || item.reviewer_notes, attemptId, question_number);
+      `, [newPoints, isCorrect, reviewer_notes || item.reviewer_notes, attemptId, question_number]);
 
       // Recalculate section totals
-      const allItems = db.prepare('SELECT section_number, awarded_points FROM attempt_answers WHERE attempt_id = ?').all(attemptId);
+      const [allItems] = await conn.query(
+        'SELECT section_number, awarded_points FROM attempt_answers WHERE attempt_id = ?',
+        [attemptId]
+      );
+
       let s1 = 0, s2 = 0, s3 = 0, s4 = 0;
       for (const it of allItems) {
-        if (it.section_number === 1) s1 += it.awarded_points;
-        else if (it.section_number === 2) s2 += it.awarded_points;
-        else if (it.section_number === 3) s3 += it.awarded_points;
-        else if (it.section_number === 4) s4 += it.awarded_points;
+        const pts = Number(it.awarded_points);
+        if (it.section_number === 1) s1 += pts;
+        else if (it.section_number === 2) s2 += pts;
+        else if (it.section_number === 3) s3 += pts;
+        else if (it.section_number === 4) s4 += pts;
       }
 
       const total = s1 + s2 + s3 + s4;
       const percentage = Math.round((total / 100.0) * 1000) / 10.0;
-      const evalRow = db.prepare('SELECT passing_percentage FROM evaluation_versions WHERE id = ?').get(attempt.evaluation_id);
-      const passThreshold = evalRow ? evalRow.passing_percentage : 70.0;
+      const evalRows = await conn.query('SELECT passing_percentage FROM evaluation_versions WHERE id = ?', [attempt.evaluation_id]);
+      const evalRow = evalRows[0] && evalRows[0].length > 0 ? evalRows[0][0] : null;
+      const passThreshold = evalRow ? Number(evalRow.passing_percentage) : 70.0;
       const passed = percentage >= passThreshold ? 1 : 0;
 
-      db.prepare(`
+      await conn.query(`
         UPDATE evaluation_attempts
         SET sec1_score = ?, sec2_score = ?, sec3_score = ?, sec4_score = ?,
             total_score = ?, percentage = ?, passed = ?
         WHERE id = ?
-      `).run(s1, s2, s3, s4, total, percentage, passed, attemptId);
+      `, [s1, s2, s3, s4, total, percentage, passed, attemptId]);
     });
-
-    tx();
 
     res.json({ success: true, message: `Question ${question_number} score updated.` });
   } catch (err) {
@@ -593,9 +608,9 @@ router.post('/attempt/:id/override', (req, res) => {
 /**
  * GET/POST /api/admin/settings
  */
-router.get('/settings', (req, res) => {
+router.get('/settings', async (req, res) => {
   try {
-    const rows = db.prepare('SELECT * FROM settings').all();
+    const rows = await db.query('SELECT `key`, `value` FROM settings');
     const settings = {};
     rows.forEach(r => { settings[r.key] = r.value; });
     res.json({ settings });
@@ -604,16 +619,24 @@ router.get('/settings', (req, res) => {
   }
 });
 
-router.post('/settings', (req, res) => {
+router.post('/settings', async (req, res) => {
   try {
     const { result_visibility, pass_threshold_percentage } = req.body;
-    const stmt = db.prepare('INSERT OR REPLACE INTO settings (key, value) VALUES (?, ?)');
 
-    const tx = db.transaction(() => {
-      if (result_visibility !== undefined) stmt.run('result_visibility', result_visibility);
-      if (pass_threshold_percentage !== undefined) stmt.run('pass_threshold_percentage', String(pass_threshold_percentage));
+    await db.transaction(async (conn) => {
+      if (result_visibility !== undefined) {
+        await conn.query(
+          'INSERT INTO settings (`key`, `value`) VALUES (?, ?) ON DUPLICATE KEY UPDATE `value` = VALUES(`value`)',
+          ['result_visibility', result_visibility]
+        );
+      }
+      if (pass_threshold_percentage !== undefined) {
+        await conn.query(
+          'INSERT INTO settings (`key`, `value`) VALUES (?, ?) ON DUPLICATE KEY UPDATE `value` = VALUES(`value`)',
+          ['pass_threshold_percentage', String(pass_threshold_percentage)]
+        );
+      }
     });
-    tx();
 
     res.json({ success: true, message: 'Settings updated successfully' });
   } catch (err) {

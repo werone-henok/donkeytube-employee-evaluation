@@ -1,4 +1,5 @@
-const { db } = require('../server/db');
+const fs = require('fs');
+const path = require('path');
 const {
   gradeTrueFalse,
   gradeFillInBlank,
@@ -62,18 +63,27 @@ const essayRubric = {
 const esRes1 = gradeShortAnswer('አስፈጻሚ ወደ ማኔጀር ሲሸጋገር ዋነኛው ፈተና የአስተሳሰብ (mindset) መቀየር እና ከቡድን አባላት ጋር ያለው የስራ ግንኙነት መለወጥ ነው።', essayRubric);
 console.log('Essay Good Answer Match:', esRes1.is_correct === true, esRes1.points === 1, esRes1.matched_keywords);
 
-// 5. Test Complete Evaluation with Perfect Answers from Database
-const questions = db.prepare('SELECT * FROM questions WHERE evaluation_id = ? ORDER BY question_number ASC').all('eval-v1.0.0-official');
-const answerKeys = db.prepare('SELECT * FROM answer_keys WHERE question_id IN (SELECT id FROM questions WHERE evaluation_id = ?)').all('eval-v1.0.0-official');
-const rubrics = db.prepare('SELECT * FROM rubrics WHERE question_id IN (SELECT id FROM questions WHERE evaluation_id = ?)').all('eval-v1.0.0-official');
+// 5. Test Complete Evaluation with Perfect Answers from Authoritative Seed
+const seedPath = path.join(__dirname, '..', 'data', 'seed_evaluation_v1.json');
+const seed = JSON.parse(fs.readFileSync(seedPath, 'utf8'));
+
+const questions = seed.questions;
+const answers = seed.answers;
 
 const ansKeysMap = {};
-for (const ak of answerKeys) {
-  ansKeysMap[ak.question_number] = ak;
-}
 const rubricsMap = {};
-for (const rb of rubrics) {
-  rubricsMap[rb.question_number] = rb;
+
+for (const a of answers) {
+  ansKeysMap[a.question_number] = a;
+  if (a.model_answer || a.required_concepts) {
+    rubricsMap[a.question_number] = {
+      model_answer: a.model_answer || a.official_answer,
+      required_concepts_json: JSON.stringify(a.required_concepts || []),
+      accepted_keywords_json: JSON.stringify(a.accepted_keywords || []),
+      min_concepts: a.min_concepts || 1,
+      grading_mode: a.grading_mode || 'AUTO'
+    };
+  }
 }
 
 // Build 100% perfect submission

@@ -31,9 +31,9 @@ An enterprise exam and competency assessment web application built for DonkeyTub
 
 ## Tech Stack
 
-- **Backend:** Node.js, Express 5, Better-SQLite3
+- **Backend:** Node.js, Express 5, `mysql2/promise` (Connection Pooling)
 - **Frontend:** Vanilla HTML5, CSS3, Modern ES JavaScript
-- **Database:** SQLite (WAL mode) with auto-seeding
+- **Database:** **MySQL 8.0** with InnoDB, foreign keys, UTF8MB4 charset, and auto-seeding
 
 ---
 
@@ -42,6 +42,7 @@ An enterprise exam and competency assessment web application built for DonkeyTub
 ### Prerequisites
 - [Node.js](https://nodejs.org/) (v18 or higher recommended)
 - [Git](https://git-scm.com/)
+- **MySQL 8.0** (via Docker, XAMPP, or local service)
 
 ### Installation
 
@@ -56,12 +57,31 @@ An enterprise exam and competency assessment web application built for DonkeyTub
    npm install
    ```
 
-3. Start the server:
+3. Configure Environment (`.env`):
+   Copy `.env.example` to `.env` (pre-configured for standard local MySQL):
+   ```env
+   PORT=3000
+   DB_HOST=localhost
+   DB_PORT=3306
+   DB_USER=root
+   DB_PASSWORD=
+   DB_NAME=donkeytube_evaluation
+   ```
+
+4. Start MySQL:
+   - **Option A (Docker - 1 command):**
+     ```bash
+     docker compose up -d
+     ```
+   - **Option B (XAMPP / Local MySQL):**
+     Start the MySQL service in your XAMPP Control Panel.
+
+5. Start the server:
    ```bash
    npm start
    ```
 
-4. Open your browser and navigate to:
+6. Open your browser and navigate to:
    - Candidate Portal: `http://localhost:3000`
    - Admin Portal: `http://localhost:3000/admin.html` (Default password: `donkeytube2026`)
 
@@ -69,7 +89,7 @@ An enterprise exam and competency assessment web application built for DonkeyTub
 
 ## Verification & Testing
 
-To run the automated end-to-end and grading tests:
+To run the automated end-to-end and grading tests against MySQL:
 ```bash
 node scripts/test_grading.js
 node scripts/verify_e2e.js
@@ -88,11 +108,13 @@ node scripts/verify_e2e.js
 │   ├── admin.js             # Admin management logic
 │   └── styles.css           # Modern, responsive UI design
 ├── scripts/                 # Ingestion, parsing, and automated test suites
-├── server/                  # Express server & SQLite backend
-│   ├── db.js                # Schema and auto-seed initialization
+├── server/                  # Express server & MySQL backend
+│   ├── db.js                # MySQL pool, schemas, and auto-seeding
 │   ├── grading_engine.js    # Multilingual evaluation engine
 │   ├── routes/              # Modular API endpoints (evaluation, admin)
 │   └── index.js             # Server entry point
+├── docker-compose.yml       # MySQL 8 service configuration
+├── .env.example             # Environment template
 └── source_docs/             # Original official questions and answer keys
 ```
 
